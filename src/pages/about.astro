@@ -43,8 +43,16 @@ import Layout from '../layouts/Layout.astro';
 
       <h2>位置資訊</h2>
       <p>位於台中太平工業聚落，鄰近國道三號中投交流道，交通便利。歡迎客戶實地參觀。</p>
-      <div style="margin-top: 24px; aspect-ratio: 16/9; background: var(--gray-100); border-radius: 12px; display: grid; place-items: center; color: var(--gray-600);">
-        <span>📍 Google Maps 嵌入位置（部署後啟用）</span>
+      <div style="margin-top: 24px; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200);">
+        <iframe
+          src="https://maps.google.com/maps?q=%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%A4%AA%E5%B9%B3%E5%8D%80%E6%88%90%E5%8A%9F%E8%B7%AF29%E5%B7%B722%E8%99%9F&hl=zh-TW&z=17&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="銨東股份有限公司位置地圖"
+          allowfullscreen></iframe>
       </div>
     </div>
   </section>

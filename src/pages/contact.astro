@@ -140,8 +140,16 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
       <!-- Google Maps -->
       <div style="margin-top: 64px;">
         <h2 style="font-size: clamp(24px, 2.5vw, 32px); color: var(--gray-900); margin-bottom: 24px; font-weight: 700; text-align: center;">前往銨東</h2>
-        <div style="aspect-ratio: 16/7; background: var(--gray-100); border-radius: 16px; display: grid; place-items: center; color: var(--gray-600); border: 1px solid var(--gray-200);">
-          <span>📍 Google Maps 嵌入位置（部署後啟用）</span>
+        <div style="aspect-ratio: 16/7; border-radius: 16px; overflow: hidden; border: 1px solid var(--gray-200);">
+          <iframe
+            src="https://maps.google.com/maps?q=%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%A4%AA%E5%B9%B3%E5%8D%80%E6%88%90%E5%8A%9F%E8%B7%AF29%E5%B7%B722%E8%99%9F&hl=zh-TW&z=17&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="銨東股份有限公司位置地圖"
+            allowfullscreen></iframe>
         </div>
       </div>
     </div>
