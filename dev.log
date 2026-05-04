@@ -1,0 +1,184 @@
+
+> dev
+> astro dev
+
+[34m▶ Astro collects anonymous usage data.[39m
+  This information helps us improve Astro.
+  Run "astro telemetry disable" to opt-out.
+  [36m[4mhttps://astro.build/telemetry[24m[39m
+
+[vite] connected.
+[2m23:51:15[22m [34m[types][39m Generated [2m0ms[22m
+[42m[1m astro [22m[49m [32mv6.2.1[39m [2mready in[22m 649 [2mms[22m
+[2m┃[22m Local    [36mhttp://localhost:4321/[39m
+[2m┃[22m Network  [2muse --host to expose[22m
+[2m23:51:15[22m [32mwatching for file changes...[39m
+[2m23:51:26[22m [34m[200][39m / [2m11ms[22m
+[2m23:58:43[22m [34m[200][39m / [2m1ms[22m
+[2m23:59:03[22m [33m[404][39m /contact [2m3ms[22m
+[2m23:59:09[22m [33m[404][39m /about [2m0ms[22m
+[2m00:03:31[22m [33m[404][39m /services [2m1ms[22m
+[2m00:03:40[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m00:03:40[22m [34m[200][39m / [2m11ms[22m
+[2m00:03:45[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m00:03:45[22m [34m[200][39m / [2m3ms[22m
+[2m00:03:55[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m00:03:55[22m [34m[200][39m / [2m3ms[22m
+[2m00:04:13[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m00:04:13[22m [34m[watch][39m src/pages/index.astro
+[vite] program reload
+[2m00:04:17[22m [34m[200][39m / [2m3ms[22m
+[2m00:04:30[22m [34m[200][39m / [2m2ms[22m
+[2m00:10:36[22m [34m[200][39m / [2m1ms[22m
+[2m00:13:54[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m00:13:55[22m [34m[200][39m / [2m5ms[22m
+[2m00:26:16[22m [34m[200][39m / [2m5ms[22m
+[2m00:26:28[22m [34m[200][39m / [2m3ms[22m
+[2m00:26:28[22m [34m[200][39m /about [2m3ms[22m
+[2m00:26:28[22m [34m[200][39m /services [2m4ms[22m
+[2m00:26:28[22m [34m[200][39m /equipment [2m4ms[22m
+[2m00:26:28[22m [34m[200][39m /works [2m3ms[22m
+[2m00:26:28[22m [34m[200][39m /quality [2m3ms[22m
+[2m00:26:28[22m [34m[200][39m /contact [2m5ms[22m
+[2m00:26:49[22m [34m[200][39m / [2m1ms[22m
+[2m00:26:51[22m [34m[200][39m /about [2m1ms[22m
+[2m00:27:04[22m [34m[200][39m /services [2m2ms[22m
+[2m00:27:06[22m [34m[200][39m /equipment [2m1ms[22m
+[2m00:27:23[22m [34m[200][39m /works [2m1ms[22m
+[2m00:27:27[22m [34m[200][39m /quality [2m1ms[22m
+[2m00:28:12[22m [34m[200][39m / [2m1ms[22m
+[2m14:19:49[22m [34m[200][39m / [2m1ms[22m
+[2m14:19:52[22m [34m[200][39m /services [2m1ms[22m
+[2m11:45:43[22m [34m[200][39m /services [2m15ms[22m
+[2m11:54:13[22m [34m[200][39m / [2m2ms[22m
+[2m11:54:28[22m [34m[200][39m /about [2m1ms[22m
+[2m11:55:05[22m [34m[200][39m /services [2m1ms[22m
+[2m11:55:07[22m [34m[200][39m /equipment [2m1ms[22m
+[2m11:55:35[22m [34m[200][39m /works [2m2ms[22m
+[2m11:55:43[22m [34m[200][39m /quality [2m1ms[22m
+[2m12:06:44[22m [34m[200][39m / [2m1ms[22m
+[2m12:07:08[22m [34m[200][39m /services [2m1ms[22m
+[2m12:07:45[22m [34m[200][39m /equipment [2m1ms[22m
+[2m12:08:04[22m [34m[200][39m /works [2m2ms[22m
+[2m12:08:13[22m [34m[200][39m /quality [2m1ms[22m
+[2m12:08:16[22m [34m[200][39m /works [2m1ms[22m
+[2m12:09:30[22m [34m[200][39m /works [2m4ms[22m
+[2m12:09:36[22m [34m[200][39m /works [2m2ms[22m
+[2m12:09:43[22m [34m[200][39m /works [2m6ms[22m
+[2m12:09:49[22m [34m[200][39m /works [2m5ms[22m
+[2m12:09:53[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m12:09:53[22m [34m[200][39m /works [2m2ms[22m
+[2m12:09:59[22m [34m[watch][39m /src/pages/services.astro?astro&type=style&index=0&lang.css
+[2m12:09:59[22m [34m[200][39m /works [2m2ms[22m
+[2m12:10:13[22m [34m[200][39m /works [2m2ms[22m
+[2m12:10:19[22m [34m[200][39m /works [2m2ms[22m
+[2m12:10:24[22m [34m[200][39m /works [2m2ms[22m
+[2m12:10:33[22m [34m[200][39m /works [2m2ms[22m
+[2m12:10:41[22m [34m[200][39m / [2m4ms[22m
+[2m12:10:41[22m [34m[200][39m /about [2m3ms[22m
+[2m12:10:41[22m [34m[200][39m /services [2m3ms[22m
+[2m12:10:41[22m [34m[200][39m /equipment [2m4ms[22m
+[2m12:10:41[22m [34m[200][39m /works [2m1ms[22m
+[2m12:10:41[22m [34m[200][39m /quality [2m4ms[22m
+[2m12:10:41[22m [34m[200][39m /contact [2m1ms[22m
+[2m12:10:41[22m [34m[200][39m /quality [2m1ms[22m
+[2m12:10:41[22m [34m[200][39m /works [2m1ms[22m
+[2m12:10:41[22m [34m[200][39m /equipment [2m1ms[22m
+[2m12:10:41[22m [34m[200][39m /about [2m1ms[22m
+[2m12:22:23[22m [34m[watch][39m /src/pages/services.astro?astro&type=style&index=0&lang.css
+[2m12:22:23[22m [34m[200][39m /works [2m2ms[22m
+[2m12:22:36[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m12:22:36[22m [34m[200][39m /works [2m2ms[22m
+[2m12:22:47[22m [34m[200][39m /works [2m2ms[22m
+[2m12:22:54[22m [34m[200][39m /services [2m3ms[22m
+[2m12:22:54[22m [34m[200][39m / [2m3ms[22m
+[2m12:22:54[22m [34m[200][39m /services [2m1ms[22m
+[2m12:22:54[22m [34m[200][39m / [2m1ms[22m
+[2m12:22:54[22m [34m[200][39m /services [2m1ms[22m
+[2m12:22:54[22m [34m[200][39m / [2m1ms[22m
+[2m12:22:54[22m [34m[200][39m /services [2m1ms[22m
+[2m12:22:54[22m [34m[200][39m /equipment [2m3ms[22m
+[2m12:25:16[22m [34m[watch][39m /src/pages/services.astro?astro&type=style&index=0&lang.css
+[2m12:25:16[22m [34m[200][39m /works [2m2ms[22m
+[2m12:25:21[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m12:25:21[22m [34m[200][39m /works [2m2ms[22m
+[2m12:25:28[22m [34m[200][39m /works [2m2ms[22m
+[2m13:47:34[22m [34m[200][39m /works [2m1ms[22m
+[2m13:47:56[22m [34m[200][39m / [2m3ms[22m
+[2m13:48:02[22m [34m[200][39m /about [2m2ms[22m
+[2m13:48:06[22m [34m[200][39m /about [2m2ms[22m
+[2m13:48:08[22m [34m[200][39m /services [2m7ms[22m
+[31m[1m13:48:10[22m [ERROR][39m [31m[UnhandledRejection][39m Astro detected an unhandled rejection. Here's the stack trace:
+Error: ENOENT: no such file or directory, stat 'D:\水母資料夾\銨東官網\src\pages\works.astro.tmp.57164.1777873690690'
+    at Object.statSync (node:fs:1726:25)
+    at walk (D:\水母資料夾\銨東官網\node_modules\astro\dist\core\routing\create-manifest.js:66:21)
+    at createFileBasedRoutes (D:\水母資料夾\銨東官網\node_modules\astro\dist\core\routing\create-manifest.js:162:3)
+    at createRoutesList (D:\水母資料夾\銨東官網\node_modules\astro\dist\core\routing\create-manifest.js:432:27)
+    at rebuildRoutes (D:\水母資料夾\銨東官網\node_modules\astro\dist\vite-plugin-routes\index.js:43:30)
+    at FSWatcher.<anonymous> (D:\水母資料夾\銨東官網\node_modules\astro\dist\vite-plugin-routes\index.js:87:36)
+    at FSWatcher.emit (node:events:521:24)
+    at FSWatcher.emitWithAll (file:///D:/%E6%B0%B4%E6%AF%8D%E8%B3%87%E6%96%99%E5%A4%BE/%E9%8A%A8%E6%9D%B1%E5%AE%98%E7%B6%B2/node_modules/vite/dist/node/chunks/config.js:14034:9)
+    at FSWatcher._emit (file:///D:/%E6%B0%B4%E6%AF%8D%E8%B3%87%E6%96%99%E5%A4%BE/%E9%8A%A8%E6%9D%B1%E5%AE%98%E7%B6%B2/node_modules/vite/dist/node/chunks/config.js:14107:9)
+    at NodeFsHandler$1._handleFile (file:///D:/%E6%B0%B4%E6%AF%8D%E8%B3%87%E6%96%99%E5%A4%BE/%E9%8A%A8%E6%9D%B1%E5%AE%98%E7%B6%B2/node_modules/vite/dist/node/chunks/config.js:13145:14)
+  [1mHint:[22m
+[33m    Make sure your promises all have an `await` or a `.catch()` handler.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/unhandled-rejection/[24m[39m
+  [1mStack trace:[22m
+[2m    at Object.statSync (node:fs:1726:25)
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+[2m13:48:10[22m [34m[200][39m /services [2m2ms[22m
+[2m13:48:14[22m [34m[200][39m /services [2m2ms[22m
+[2m13:48:21[22m [34m[watch][39m /src/pages/services.astro?astro&type=style&index=0&lang.css
+[2m13:48:22[22m [34m[200][39m /services [2m4ms[22m
+[2m13:48:26[22m [34m[200][39m / [2m1ms[22m
+[2m13:48:26[22m [34m[200][39m /about [2m1ms[22m
+[2m13:48:26[22m [34m[200][39m /services [2m1ms[22m
+[2m13:48:26[22m [34m[200][39m /equipment [2m3ms[22m
+[2m13:48:26[22m [34m[200][39m /works [2m2ms[22m
+[2m13:48:26[22m [34m[200][39m /quality [2m1ms[22m
+[2m13:48:26[22m [34m[200][39m /contact [2m1ms[22m
+[2m14:03:43[22m [34m[200][39m /services [2m2ms[22m
+[2m14:03:45[22m [34m[200][39m / [2m3ms[22m
+[2m14:03:48[22m [34m[200][39m /about [2m2ms[22m
+[2m14:04:34[22m [34m[200][39m /services [2m4ms[22m
+[2m14:08:00[22m [34m[200][39m /services [2m1ms[22m
+[2m14:08:04[22m [34m[200][39m /equipment [2m1ms[22m
+[2m14:14:44[22m [34m[200][39m /equipment [2m4ms[22m
+[2m14:14:48[22m [34m[200][39m /equipment [2m1ms[22m
+[2m15:38:36[22m [34m[200][39m /equipment [2m1ms[22m
+[2m15:42:09[22m [34m[200][39m /works [2m1ms[22m
+[2m15:43:32[22m [34m[200][39m /works [2m2ms[22m
+[2m15:43:35[22m [34m[200][39m /equipment [2m6ms[22m
+[2m22:47:41[22m [34m[200][39m /works [2m2ms[22m
+[2m22:47:46[22m [34m[200][39m /equipment [2m1ms[22m
+[2m22:49:59[22m [34m[200][39m /equipment [2m1ms[22m
+[2m22:52:09[22m [34m[200][39m /equipment [2m4ms[22m
+[2m22:52:13[22m [34m[200][39m /equipment [2m7ms[22m
+[2m22:52:16[22m [34m[200][39m /equipment [2m1ms[22m
+[2m22:54:55[22m [34m[200][39m /works [2m1ms[22m
+[2m22:54:59[22m [34m[200][39m /quality [2m1ms[22m
+[2m22:55:01[22m [34m[200][39m /about [2m1ms[22m
+[2m22:55:11[22m [34m[200][39m / [2m1ms[22m
+[2m22:55:29[22m [34m[200][39m / [2m2ms[22m
+[2m22:55:33[22m [34m[200][39m /equipment [2m3ms[22m
+[2m22:57:50[22m [34m[200][39m / [2m2ms[22m
+[2m22:57:55[22m [34m[200][39m /equipment [2m3ms[22m
+[2m22:57:55[22m [34m[200][39m /equipment [2m1ms[22m
+[2m23:01:47[22m [34m[200][39m / [2m2ms[22m
+[2m23:01:49[22m [34m[200][39m /services [2m2ms[22m
+[2m23:01:49[22m [34m[200][39m /equipment [2m2ms[22m
+[2m23:31:00[22m Configuration file updated. Restarting...
+[vite] connected.
+[2m23:31:00[22m [34m[vite][39m Re-optimizing dependencies because vite config has changed
+[2m23:31:00[22m [34m[vite][39m server restarted.
+[2m23:31:01[22m [34m[200][39m /equipment [2m9ms[22m
+[2m23:31:30[22m Configuration file updated. Restarting...
+[vite] connected.
+[2m23:31:31[22m [34m[vite][39m Re-optimizing dependencies because lockfile has changed
+[2m23:31:31[22m [34m[vite][39m server restarted.
+[2m23:31:31[22m [34m[200][39m /equipment [2m10ms[22m
+[2m23:31:35[22m Configuration file updated. Restarting...
+[vite] connected.
+[2m23:31:35[22m [34m[vite][39m server restarted.
+[2m23:31:35[22m [34m[200][39m /equipment [2m5ms[22m

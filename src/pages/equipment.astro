@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const machines = [
+  {
+    name: 'NSV102am 立式綜合加工機',
+    brand: '永進機械 YIDA',
+    type: '三軸銑床',
+    specs: { '行程 (X/Y/Z)': '1020 / 510 / 610 mm', '主軸轉速': '12,000 RPM', '刀庫容量': '30 把', '控制器': 'FANUC 32i' },
+  },
+  {
+    name: 'VII-20 CNC 車床',
+    brand: '台中精機 VICTOR',
+    type: 'CNC 車床',
+    specs: { '主軸轉速': '3,500 RPM', '刀庫容量': '10 把', '控制器': 'FANUC 0i-TD' },
+  },
+  {
+    name: 'NSV106 五軸加工中心',
+    brand: '永進機械 YIDA',
+    type: '五軸加工 (3+2)',
+    specs: { '行程 (X/Y/Z)': '1020 / 610 / 610 mm', '旋轉軸 (A/C)': '±120° / 360°', '主軸轉速': '15,000 RPM', '刀庫容量': '30 把', '控制器': 'FANUC 0i-MF' },
+  },
+  {
+    name: 'NT-2000LY 車銑複合機',
+    brand: '森精機 DMG MORI',
+    type: '車銑複合加工',
+    specs: { '車削直徑': '∅250 mm', '車削長度': '450 mm', 'Y 軸行程': '+50 / −40 mm', '主軸轉速': '5,000 RPM', '銑削主軸': 'B 軸 ±100°' },
+  },
+  {
+    name: 'NP16 CNC 車床',
+    brand: '永進機械 YIDA',
+    type: 'CNC 車床',
+    specs: { '車削直徑': '∅200 mm', '車削長度': '350 mm', '主軸轉速': '6,000 RPM', '刀庫容量': '12 把', '控制器': 'FANUC 0i-TF' },
+  },
+  {
+    name: 'Brother 高速加工機 ①',
+    brand: 'Brother 兄弟工業',
+    type: '小型高速加工',
+    specs: { '主軸轉速': '10,000 RPM', '適用': '精密小件加工' },
+  },
+  {
+    name: 'Brother 高速加工機 ②',
+    brand: 'Brother 兄弟工業',
+    type: '小型高速加工',
+    specs: { '主軸轉速': '10,000 RPM', '適用': '精密小件加工' },
+  },
+  {
+    name: 'Brother 高速加工機 ③',
+    brand: 'Brother 兄弟工業',
+    type: '小型高速加工',
+    specs: { '主軸轉速': '10,000 RPM', '適用': '精密小件加工' },
+  },
+];
+---
+
+<Layout
+  title="設備介紹｜CNC 加工機台陣容｜銨東股份有限公司"
+  description="銨東股份有限公司擁有完整 CNC 加工設備：永進機械、台中精機、森精機 DMG MORI 等品牌的五軸加工中心、車銑複合機、三軸銑床、CNC 車床。"
+  active="equipment"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">首頁</a> ／ 設備介紹</div>
+      <h1>設備介紹</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">完整 CNC 加工陣容，國際大廠機台與機聯網即時監控</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">加工機台陣容</h2>
+      <p class="section-sub">所有機台已導入機聯網即時監控，生產進度透明可追溯</p>
+      <div class="grid-3">
+        {machines.map(m => (
+          <div class="spec-card">
+            <div class="spec-img">📷 {m.name}</div>
+            <div class="spec-body">
+              <h3>{m.name}</h3>
+              <div class="brand-tag">{m.brand} ｜ {m.type}</div>
+              <table class="spec-table">
+                <tbody>
+                  {Object.entries(m.specs).map(([k, v]) => (
+                    <tr><th>{k}</th><td>{v}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p style="text-align: center; color: var(--gray-600); margin-top: 32px; font-size: 14px;">
+        ※ 上述規格為示意，實際機台規格以現場為準。其他輔助機台請來電洽詢。
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">機聯網即時監控</h2>
+      <p class="section-sub">每一台機台連線至生產管理系統，即時掌握加工狀態</p>
+      <div class="grid-3">
+        <div class="feature">
+          <h3>即時狀態</h3>
+          <p>機台運轉、待機、警報狀態即時上傳，生產進度透明</p>
+        </div>
+        <div class="feature">
+          <h3>產量追蹤</h3>
+          <p>件數自動回報，早晚班產量精準統計，交期可預估</p>
+        </div>
+        <div class="feature">
+          <h3>品質追溯</h3>
+          <p>每一張訂單對應加工記錄，問題追溯至加工時間與機台</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>需要更詳細的設備規格？</h2>
+      <p>歡迎來廠參觀或來電諮詢加工能力</p>
+      <a href="/contact" class="btn btn-primary btn-lg">聯絡銨東</a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,127 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  active?: string;
+}
+
+const {
+  title,
+  description = '銨東股份有限公司位於台中太平，專營精密 CNC 加工，提供車銑複合、五軸、三軸/四軸銑床、車床、鑄鋁鑄鐵不鏽鋼板材加工服務。歡迎來電詢價。',
+  keywords = 'CNC加工,台中CNC,台中太平CNC,精密加工,車銑複合,五軸加工,三軸銑床,四軸銑床,鑄鋁加工,鑄鐵加工,不鏽鋼加工,鋼材加工,鋁材加工,板材加工,銨東',
+  active,
+} = Astro.props;
+
+const navItems = [
+  { href: '/', label: '首頁', key: 'home' },
+  { href: '/about', label: '關於銨東', key: 'about' },
+  { href: '/services', label: '加工項目', key: 'services' },
+  { href: '/equipment', label: '設備介紹', key: 'equipment' },
+  { href: '/works', label: '實績案例', key: 'works' },
+  { href: '/quality', label: '品質政策', key: 'quality' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Language" content="zh-TW" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content="銨東股份有限公司" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={`https://adcnc.com.tw${Astro.url.pathname}`} />
+  <meta property="og:site_name" content="銨東股份有限公司" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: '銨東股份有限公司',
+    image: 'https://adcnc.com.tw/og-image.jpg',
+    url: 'https://adcnc.com.tw/',
+    telephone: '04-24965670',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '成功路29巷22號',
+      addressLocality: '太平區',
+      addressRegion: '台中市',
+      addressCountry: 'TW',
+    },
+    description,
+  })} />
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark">AD</span>
+        <span class="brand-name">銨東股份有限公司</span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        {navItems.map(item => (
+          <a href={item.href} class={active === item.key ? 'active' : ''}>{item.label}</a>
+        ))}
+        <a href="/contact" class={`nav-cta ${active === 'contact' ? 'active' : ''}`}>聯絡詢價</a>
+      </nav>
+      <button class="hamburger" aria-label="選單" onclick="document.getElementById('nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <slot />
+
+  <div class="float-contact">
+    <a href="tel:0424965670" class="float-btn float-tel" aria-label="撥打電話">
+      <span class="float-icon">📞</span>
+      <span class="float-label">立即撥打</span>
+    </a>
+    <a href="https://line.me/R/ti/p/@adcnc" target="_blank" rel="noopener" class="float-btn float-line" aria-label="LINE 聯絡">
+      <span class="float-icon">💬</span>
+      <span class="float-label">LINE 諮詢</span>
+    </a>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="brand-name">銨東股份有限公司</div>
+        <p>統一編號 83181576</p>
+        <p>台中市太平區成功路29巷22號</p>
+        <p>電話 04-24965670 ｜ 傳真 04-24966591</p>
+      </div>
+      <div>
+        <h4>網站導覽</h4>
+        <ul>
+          <li><a href="/about">關於銨東</a></li>
+          <li><a href="/services">加工項目</a></li>
+          <li><a href="/equipment">設備介紹</a></li>
+          <li><a href="/works">實績案例</a></li>
+          <li><a href="/contact">聯絡詢價</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>聯絡我們</h4>
+        <p>info@adcnc.com.tw</p>
+        <p>週一至週六 8:00-17:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 銨東股份有限公司 AnDong Co., Ltd. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>

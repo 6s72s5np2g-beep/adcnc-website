@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: 'turn-mill',
+    title: '車銑複合加工',
+    keyword: '車銑複合加工',
+    desc: '車銑複合機台一次裝夾即可完成車削與銑削工序，省去多次裝夾誤差，提升精度與生產效率。適合複雜形狀軸類、含異形特徵的精密零件。',
+    items: ['軸類零件一次成型', '異形孔位、鍵槽、螺紋一次完成', '減少裝夾誤差，重複精度高', '適合中高精度量產需求'],
+    materials: '碳鋼、合金鋼、不鏽鋼、鋁合金、銅合金',
+    icon: '⚙',
+  },
+  {
+    id: '5-axis',
+    title: '五軸加工',
+    keyword: '五軸加工 五軸定位 五面加工',
+    desc: '五軸加工中心採 3+2 定位加工，A/C 軸先定位後再以三軸切削，一次裝夾完成多面、多角度加工，避免重複裝夾誤差。適合多面結構件、夾治具、模具件、精密機構件。',
+    items: ['一次裝夾完成多面加工', '多角度斜孔、傾斜面銑削', '減少裝夾與夾治具成本', '提升尺寸一致性'],
+    materials: '鋁合金、鈦合金、不鏽鋼、工具鋼、結構鋼',
+    icon: '🔧',
+  },
+  {
+    id: 'mill-3-4',
+    title: '三軸／四軸銑床加工',
+    keyword: '三軸銑床加工 四軸銑床加工',
+    desc: '三軸銑床承接平面、輪廓、鑽孔、攻牙等基礎銑削；四軸加工增加旋轉軸，可加工圓周等分孔位、凸輪等具有迴轉特徵的零件。',
+    items: ['模具、夾治具、結構件', '法蘭、底板、固定座', '凸輪、分度盤等迴轉件（4 軸）', '量產零件量產試作皆可'],
+    materials: '鋁合金、鋼材、鑄鐵、不鏽鋼、塑膠工程料',
+    icon: '📐',
+  },
+  {
+    id: 'turning',
+    title: 'CNC 車床加工',
+    keyword: 'CNC 車床加工',
+    desc: 'CNC 車床專精軸類、套筒、圓盤等迴轉體零件量產，配備動力刀塔、副主軸的車床更可整合銑削、鑽孔、攻牙工序。',
+    items: ['軸類、套筒、襯套、心軸', '法蘭、圓盤、連接件', '螺紋、退刀槽、油溝', '小批量試作至大批量量產'],
+    materials: '鋼材 (S45C/SCM440)、不鏽鋼 (SUS304/316)、鋁合金、銅、塑膠料',
+    icon: '🔩',
+  },
+  {
+    id: 'cast',
+    title: '鑄鋁／鑄鐵加工',
+    keyword: '鑄鋁加工 鑄鐵加工',
+    desc: '承接鑄件後加工，包含鑄鐵 (FCD250、FC250) 與鑄鋁 (A356、ADC12) 等大件加工，適合機械底座、減速機殼、油路塊、汽缸體等。',
+    items: ['機械底座、機座大件加工', '減速機殼、齒輪箱', '油壓油路塊', '汽車零件、引擎殼'],
+    materials: 'FCD250、FCD400、FC250、A356、ADC12 等鑄鐵鑄鋁料系',
+    icon: '🏗️',
+  },
+  {
+    id: 'stainless',
+    title: '不鏽鋼／鋼材／板材加工',
+    keyword: '不鏽鋼加工 鋼材加工 鋁材加工 板材加工',
+    desc: '提供完整料系加工服務，包含食品級不鏽鋼件、結構鋼、鋁板鋁擠型、銅板等，依客戶需求由銨東代料或客戶供料皆可。',
+    items: ['食品級不鏽鋼件', '鋁板、鋁擠型結構件', '結構鋼、彈簧鋼零件', '銅板、銅合金導電件'],
+    materials: 'SUS304、SUS316、SUS440、A6061、A7075、A2024、S45C、SCM440、SK 系列工具鋼',
+    icon: '⚒️',
+  },
+];
+---
+
+<Layout
+  title="加工項目｜車銑複合・五軸・三軸銑床・CNC 車床｜銨東股份有限公司"
+  description="銨東股份有限公司提供完整 CNC 加工服務：車銑複合加工、五軸加工、三軸/四軸銑床加工、CNC 車床加工、鑄鋁鑄鐵加工、不鏽鋼鋼材鋁材板材加工。歡迎詢價。"
+  active="services"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">首頁</a> ／ 加工項目</div>
+      <h1>加工項目</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-6" style="margin-bottom: 64px;">
+        {services.map(s => (
+          <a href={`#${s.id}`} class="card">
+            <div class="card-icon">{s.icon}</div>
+            <h3>{s.title}</h3>
+            <p>{s.desc.slice(0, 30)}⋯</p>
+          </a>
+        ))}
+      </div>
+
+      {services.map((s, idx) => (
+        <article id={s.id} style={`padding: 64px 0; ${idx > 0 ? 'border-top: 1px solid var(--gray-200);' : ''}`}>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;" class="service-row">
+            <div>
+              <div style="font-size: 56px; margin-bottom: 16px;">{s.icon}</div>
+              <h2 style="font-size: clamp(24px, 3vw, 36px); color: var(--gray-900); margin-bottom: 16px; font-weight: 800;">{s.title}</h2>
+              <p style="color: var(--gray-600); font-size: 16px; margin-bottom: 24px;">{s.desc}</p>
+              <h3 style="color: var(--primary); font-size: 16px; margin-bottom: 8px; font-weight: 700;">適用零件範例</h3>
+              <ul class="list">
+                {s.items.map(item => <li>{item}</li>)}
+              </ul>
+              <h3 style="color: var(--primary); font-size: 16px; margin: 24px 0 8px; font-weight: 700;">適用材質</h3>
+              <p style="color: var(--gray-700, #334155);">{s.materials}</p>
+              <a href="/contact" class="btn btn-blue" style="margin-top: 24px;">針對 {s.title} 詢價</a>
+            </div>
+            <div style="aspect-ratio: 4/3; background: var(--gray-100); border-radius: 12px; display: grid; place-items: center; color: var(--gray-400);">
+              <span>📷 {s.title}加工照片</span>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 768px) {
+      .service-row { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>有特殊加工需求？</h2>
+      <p>無論小批量試作或大批量量產，銨東都能為您客製化解決方案</p>
+      <a href="/contact" class="btn btn-primary btn-lg">立即詢價</a>
+    </div>
+  </section>
+</Layout>

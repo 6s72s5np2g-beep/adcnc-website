@@ -1,0 +1,223 @@
+:root {
+  --primary: #003a8c;
+  --primary-light: #1d4ed8;
+  --primary-dark: #001f4d;
+  --accent: #f59e0b;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-400: #94a3b8;
+  --gray-600: #475569;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans TC', '微軟正黑體', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--gray-800);
+  line-height: 1.7;
+  background: #fff;
+}
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Nav */
+.nav { position: sticky; top: 0; background: #fff; border-bottom: 1px solid var(--gray-200); z-index: 50; }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark {
+  background: var(--primary); color: #fff; font-weight: 800; font-size: 20px;
+  width: 44px; height: 44px; display: grid; place-items: center; border-radius: 8px;
+  letter-spacing: -1px;
+}
+.brand-name { font-size: 18px; font-weight: 700; color: var(--gray-900); }
+.nav-links { display: flex; gap: 28px; align-items: center; font-weight: 500; color: var(--gray-600); font-size: 15px; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+.nav-cta {
+  background: var(--primary); color: #fff !important; padding: 10px 20px;
+  border-radius: 6px; font-weight: 600;
+}
+.nav-cta:hover { background: var(--primary-dark); }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+  color: #fff; padding: 100px 24px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.08), transparent 40%),
+                    radial-gradient(circle at 80% 20%, rgba(245,158,11,0.12), transparent 40%);
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.hero h1 { font-size: clamp(36px, 5vw, 60px); font-weight: 800; margin-bottom: 24px; letter-spacing: 1px; }
+.hero-sub { font-size: clamp(16px, 1.5vw, 20px); color: rgba(255,255,255,0.92); margin-bottom: 36px; max-width: 700px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* 簡短頁面 hero (子頁用) */
+.page-hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: #fff; padding: 64px 24px 56px;
+  position: relative;
+}
+.page-hero h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; }
+.page-hero .breadcrumb { color: rgba(255,255,255,0.7); margin-bottom: 12px; font-size: 14px; }
+.page-hero .breadcrumb a { color: rgba(255,255,255,0.85); }
+.page-hero .breadcrumb a:hover { color: #fff; }
+
+/* Buttons */
+.btn {
+  display: inline-block; padding: 14px 32px; border-radius: 8px;
+  font-weight: 600; font-size: 16px; transition: transform 0.15s, box-shadow 0.15s;
+  border: 2px solid transparent; cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-lg { padding: 18px 40px; font-size: 18px; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #d97706; box-shadow: 0 8px 24px rgba(245,158,11,0.3); }
+.btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.5); }
+.btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+.btn-blue { background: var(--primary); color: #fff; }
+.btn-blue:hover { background: var(--primary-dark); }
+
+/* Section */
+.section { padding: 96px 24px; }
+.section-alt { background: var(--gray-50); }
+.section-title {
+  font-size: clamp(28px, 3vw, 40px); font-weight: 700; text-align: center;
+  color: var(--gray-900); margin-bottom: 12px;
+}
+.section-sub { text-align: center; color: var(--gray-600); margin-bottom: 56px; font-size: 17px; }
+
+/* Grids */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+.grid-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+
+.card {
+  background: #fff; border: 1px solid var(--gray-200); border-radius: 12px;
+  padding: 32px 28px; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,58,140,0.08); border-color: var(--primary); }
+.card-icon { font-size: 40px; margin-bottom: 16px; }
+.card h3 { font-size: 18px; color: var(--gray-900); margin-bottom: 8px; font-weight: 700; }
+.card p { color: var(--gray-600); font-size: 14px; }
+
+.feature h3 { color: var(--primary); font-size: 22px; margin-bottom: 12px; font-weight: 700; }
+.feature p { color: var(--gray-600); }
+
+/* CTA */
+.cta { background: var(--gray-900); color: #fff; text-align: center; }
+.cta h2 { font-size: clamp(28px, 3vw, 40px); margin-bottom: 12px; }
+.cta p { color: var(--gray-400); margin-bottom: 32px; font-size: 17px; }
+
+/* Footer */
+.footer { background: var(--gray-900); color: var(--gray-400); padding: 64px 24px 24px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--gray-800); }
+.footer .brand-name { color: #fff; margin-bottom: 12px; font-size: 18px; }
+.footer p { font-size: 14px; margin-bottom: 4px; }
+.footer h4 { color: #fff; margin-bottom: 16px; font-size: 14px; font-weight: 600; }
+.footer ul li { margin-bottom: 8px; font-size: 14px; }
+.footer ul li a:hover { color: #fff; }
+.footer-bottom { text-align: center; padding-top: 24px; font-size: 13px; color: var(--gray-600); }
+
+/* 漢堡選單 */
+.hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  padding: 8px; flex-direction: column; gap: 5px;
+}
+.hamburger span {
+  display: block; width: 24px; height: 2.5px; background: var(--gray-800);
+  border-radius: 2px; transition: 0.2s;
+}
+
+/* 浮動聯絡按鈕 */
+.float-contact {
+  position: fixed; right: 20px; bottom: 20px; display: flex; flex-direction: column;
+  gap: 12px; z-index: 100;
+}
+.float-btn {
+  display: flex; align-items: center; gap: 8px; padding: 14px 20px;
+  border-radius: 999px; font-weight: 600; font-size: 15px; color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.float-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.25); }
+.float-tel { background: var(--primary); }
+.float-line { background: #06c755; }
+.float-icon { font-size: 20px; line-height: 1; }
+
+/* 通用文字段樣式 */
+.prose { max-width: 800px; margin: 0 auto; }
+.prose h2 { font-size: clamp(24px, 2.5vw, 32px); color: var(--gray-900); margin: 48px 0 16px; font-weight: 700; }
+.prose h3 { font-size: 20px; color: var(--primary); margin: 32px 0 12px; font-weight: 700; }
+.prose p { margin-bottom: 16px; color: var(--gray-700, #334155); }
+.prose ul.list { list-style: disc; padding-left: 24px; margin-bottom: 16px; }
+.prose ul.list li { margin-bottom: 6px; }
+
+/* 表單 */
+.form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 16px; }
+.form-field label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--gray-800); font-size: 14px; }
+.form-field input, .form-field textarea, .form-field select {
+  width: 100%; padding: 12px 14px; border: 1px solid var(--gray-200); border-radius: 8px;
+  font-size: 15px; font-family: inherit; background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+  outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,58,140,0.1);
+}
+.form-field textarea { min-height: 120px; resize: vertical; }
+.form-required { color: #dc2626; }
+.form-help { font-size: 13px; color: var(--gray-600); margin-top: 4px; }
+
+/* 機台規格表 */
+.spec-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; }
+.spec-img { aspect-ratio: 4/3; background: var(--gray-100); display: grid; place-items: center; color: var(--gray-400); font-size: 14px; }
+.spec-body { padding: 24px; }
+.spec-body h3 { font-size: 20px; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
+.spec-body .brand-tag { font-size: 13px; color: var(--gray-600); margin-bottom: 16px; }
+.spec-table { width: 100%; font-size: 14px; }
+.spec-table tr { border-bottom: 1px solid var(--gray-100); }
+.spec-table tr:last-child { border-bottom: none; }
+.spec-table th { text-align: left; padding: 8px 0; color: var(--gray-600); font-weight: 500; width: 40%; }
+.spec-table td { padding: 8px 0; color: var(--gray-900); font-weight: 600; }
+
+/* Mobile */
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute; top: 76px; left: 0; right: 0; background: #fff;
+    flex-direction: column; gap: 0; padding: 16px 24px; border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--gray-100); width: 100%; }
+  .nav-links a:last-child { border-bottom: none; }
+  .nav-cta { text-align: center; margin-top: 8px; }
+  .hamburger { display: flex; }
+  .hero { padding: 64px 20px; }
+  .section { padding: 64px 20px; }
+  .container { padding: 0 20px; }
+  .grid-6, .grid-3, .grid-4, .grid-2 { gap: 16px; }
+  .card { padding: 24px 20px; }
+}
+
+@media (max-width: 600px) {
+  .float-contact { right: 12px; bottom: 12px; flex-direction: row; }
+  .float-btn { padding: 12px 16px; font-size: 14px; }
+  .float-label { display: none; }
+  .float-icon { font-size: 22px; }
+  .float-btn { width: 52px; height: 52px; padding: 0; justify-content: center; border-radius: 50%; }
+  .hero h1 { font-size: 32px; }
+  .hero-sub br { display: none; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { text-align: center; }
+  .footer-bottom { padding-bottom: 80px; }
+}

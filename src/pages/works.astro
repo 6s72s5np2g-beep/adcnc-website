@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const works = [
+  { category: '機械零件', material: '鑄鐵 FCD250', desc: '減速機殼體加工' },
+  { category: '機械零件', material: 'SCM440', desc: '精密軸類零件' },
+  { category: '汽車零件', material: 'A356 鑄鋁', desc: '引擎本體加工' },
+  { category: '汽車零件', material: 'S45C', desc: '傳動軸類' },
+  { category: '自動化設備', material: 'A6061 鋁', desc: '機械手臂結構件' },
+  { category: '自動化設備', material: '不鏽鋼 SUS304', desc: '輸送線零件' },
+  { category: '精密治具', material: '工具鋼 SKD11', desc: '檢驗治具' },
+  { category: '精密治具', material: 'A7075 鋁', desc: '組裝夾具' },
+  { category: '半導體', material: '不鏽鋼 SUS316', desc: '真空腔體零件' },
+  { category: '一般機械', material: '碳鋼 S20C', desc: '法蘭、底板' },
+];
+
+const categories = ['全部', ...new Set(works.map(w => w.category))];
+---
+
+<Layout
+  title="實績案例｜CNC 加工服務客戶產業｜銨東股份有限公司"
+  description="銨東股份有限公司服務產業包含機械、汽車、自動化設備、精密治具、半導體等。依客戶 NDA 規範，僅展示加工件代表作，實際合作案例請洽詢。"
+  active="works"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">首頁</a> ／ 實績案例</div>
+      <h1>實績案例</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">服務多元產業，累積數百種圖號加工經驗</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">加工件展示</h2>
+      <p class="section-sub">依產業類別精選代表作，實際合作案例請來電洽詢</p>
+
+      <div class="grid-4">
+        {works.map(w => (
+          <div class="spec-card">
+            <div class="spec-img" style="aspect-ratio: 1/1;">📷 加工件照</div>
+            <div style="padding: 16px;">
+              <div style="font-size: 12px; color: var(--primary); font-weight: 700; margin-bottom: 4px;">{w.category}</div>
+              <div style="font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 4px;">{w.desc}</div>
+              <div style="font-size: 13px; color: var(--gray-600);">{w.material}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p style="text-align: center; color: var(--gray-600); margin-top: 48px; font-size: 14px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+        ※ 出於與客戶簽署的保密協議，本網站僅展示加工件類型示意，不公開客戶名稱與具體圖面。<br />
+        如需評估合作，歡迎來電索取相關產業實作參考案例。
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">服務產業範圍</h2>
+      <div class="grid-4">
+        <div class="card"><div class="card-icon">🏭</div><h3>機械製造</h3><p>減速機、齒輪箱、傳動件</p></div>
+        <div class="card"><div class="card-icon">🚗</div><h3>汽車產業</h3><p>引擎件、傳動件、底盤件</p></div>
+        <div class="card"><div class="card-icon">🤖</div><h3>自動化設備</h3><p>機械手臂、輸送、夾治具</p></div>
+        <div class="card"><div class="card-icon">⚗️</div><h3>半導體</h3><p>真空腔體、晶圓夾具</p></div>
+        <div class="card"><div class="card-icon">🔬</div><h3>精密治具</h3><p>檢驗治具、組裝夾具</p></div>
+        <div class="card"><div class="card-icon">⚙️</div><h3>一般機械</h3><p>法蘭、底板、軸類</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>有相關產業合作經驗</h2>
+      <p>歡迎傳圖面評估，我們會以最快速度回覆估價</p>
+      <a href="/contact" class="btn btn-primary btn-lg">立即詢價</a>
+    </div>
+  </section>
+</Layout>

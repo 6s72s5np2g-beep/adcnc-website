@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Formspree endpoint (傑哥申請後替換 YOUR_FORM_ID)
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+---
+
+<Layout
+  title="聯絡詢價｜銨東股份有限公司｜CNC 加工詢價表單"
+  description="銨東股份有限公司聯絡資訊與詢價表單。台中太平 04-24965670，info@adcnc.com.tw。傳圖面、規格、數量，當天回覆估價。"
+  active="contact"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">首頁</a> ／ 聯絡詢價</div>
+      <h1>聯絡詢價</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">傳圖面、規格、數量，當天回覆估價</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width: 1100px;">
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px;" class="contact-row">
+        <!-- 詢價表單 -->
+        <div>
+          <h2 style="font-size: clamp(24px, 2.5vw, 32px); color: var(--gray-900); margin-bottom: 8px; font-weight: 700;">線上詢價</h2>
+          <p style="color: var(--gray-600); margin-bottom: 32px;">填寫以下表單，我們會在 1 個工作天內回覆估價。也可直接撥打 04-24965670 或 LINE 聯絡。</p>
+
+          <form action={FORMSPREE_ENDPOINT} method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+              <div class="form-field">
+                <label>聯絡人 <span class="form-required">*</span></label>
+                <input type="text" name="name" required />
+              </div>
+              <div class="form-field">
+                <label>公司名稱</label>
+                <input type="text" name="company" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label>聯絡電話 <span class="form-required">*</span></label>
+                <input type="tel" name="phone" required />
+              </div>
+              <div class="form-field">
+                <label>E-mail <span class="form-required">*</span></label>
+                <input type="email" name="email" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label>預估數量</label>
+                <input type="text" name="quantity" placeholder="例如：50 件 / 月需求" />
+              </div>
+              <div class="form-field">
+                <label>交期需求</label>
+                <input type="text" name="deadline" placeholder="例如：兩週內 / 急件" />
+              </div>
+            </div>
+
+            <div class="form-field" style="margin-bottom: 16px;">
+              <label>詢價內容 / 圖面說明 <span class="form-required">*</span></label>
+              <textarea name="message" required placeholder="請說明零件用途、材質、預期加工項目、特殊要求等⋯⋯"></textarea>
+            </div>
+
+            <div class="form-field" style="margin-bottom: 24px;">
+              <label>上傳圖檔 (PDF / JPG / DWG / STEP，可多檔)</label>
+              <input type="file" name="attachment" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.step,.stp,.iges" />
+              <p class="form-help">單檔上限 10MB；如圖檔較大可寄至 info@adcnc.com.tw</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">送出詢價</button>
+            <p class="form-help" style="text-align: center; margin-top: 12px;">送出後會收到自動回覆信，請查收（含垃圾郵件匣）</p>
+          </form>
+        </div>
+
+        <!-- 聯絡資訊 -->
+        <div>
+          <h2 style="font-size: clamp(24px, 2.5vw, 32px); color: var(--gray-900); margin-bottom: 24px; font-weight: 700;">聯絡資訊</h2>
+
+          <div class="card" style="padding: 28px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: start; gap: 16px;">
+              <div style="font-size: 28px;">📞</div>
+              <div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 4px;">電話</div>
+                <a href="tel:0424965670" style="font-size: 22px; font-weight: 700; color: var(--primary);">04-24965670</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 28px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: start; gap: 16px;">
+              <div style="font-size: 28px;">💬</div>
+              <div style="flex: 1;">
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 4px;">LINE 官方帳號</div>
+                <a href="https://line.me/R/ti/p/@adcnc" target="_blank" rel="noopener" style="font-size: 18px; font-weight: 700; color: #06c755;">@adcnc</a>
+                <div style="margin-top: 16px; aspect-ratio: 1/1; max-width: 160px; background: var(--gray-100); border-radius: 8px; display: grid; place-items: center; color: var(--gray-400); font-size: 12px; text-align: center; padding: 8px;">
+                  📱 LINE QR Code<br />（傑哥申請後放置）
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 28px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: start; gap: 16px;">
+              <div style="font-size: 28px;">✉️</div>
+              <div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 4px;">Email</div>
+                <a href="mailto:info@adcnc.com.tw" style="font-size: 16px; font-weight: 600; color: var(--gray-900);">info@adcnc.com.tw</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 28px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: start; gap: 16px;">
+              <div style="font-size: 28px;">📍</div>
+              <div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 4px;">地址</div>
+                <div style="font-weight: 600; line-height: 1.6;">台中市太平區成功路 29 巷 22 號</div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-top: 4px;">傳真 04-24966591</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 28px;">
+            <div style="display: flex; align-items: start; gap: 16px;">
+              <div style="font-size: 28px;">🕐</div>
+              <div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 4px;">營業時間</div>
+                <div style="font-weight: 600;">週一 – 週六</div>
+                <div>08:00 – 17:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Maps -->
+      <div style="margin-top: 64px;">
+        <h2 style="font-size: clamp(24px, 2.5vw, 32px); color: var(--gray-900); margin-bottom: 24px; font-weight: 700; text-align: center;">前往銨東</h2>
+        <div style="aspect-ratio: 16/7; background: var(--gray-100); border-radius: 16px; display: grid; place-items: center; color: var(--gray-600); border: 1px solid var(--gray-200);">
+          <span>📍 Google Maps 嵌入位置（部署後啟用）</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 900px) {
+      .contact-row { grid-template-columns: 1fr !important; gap: 40px !important; }
+    }
+  </style>
+</Layout>
