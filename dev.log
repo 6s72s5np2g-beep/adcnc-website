@@ -183,3 +183,7 @@ Error: ENOENT: no such file or directory, stat 'D:\水母資料夾\銨東官網\
 [2m23:31:35[22m [34m[vite][39m server restarted.
 [2m23:31:35[22m [34m[200][39m /equipment [2m5ms[22m
 [2m01:08:59[22m [34m[200][39m /equipment [2m11ms[22m
+[2m00:48:18[22m Configuration file updated. Restarting...
+[vite] connected.
+[2m00:48:19[22m [34m[vite][39m Re-optimizing dependencies because lockfile has changed
+[2m00:48:19[22m [34m[vite][39m server restarted.
