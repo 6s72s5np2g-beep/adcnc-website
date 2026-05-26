@@ -6,82 +6,211 @@ interface Props {
   description?: string;
   keywords?: string;
   active?: string;
+  lang?: 'zh-TW' | 'en' | 'ja';
 }
 
 const {
   title,
-  description = '銨東股份有限公司位於台中太平，專營精密 CNC 加工，提供車銑複合、五軸、三軸/四軸銑床、車床、鑄鋁鑄鐵不鏽鋼板材加工服務。歡迎來電詢價。',
-  keywords = 'CNC加工,台中CNC,台中太平CNC,精密加工,車銑複合,五軸加工,三軸銑床,四軸銑床,鑄鋁加工,鑄鐵加工,不鏽鋼加工,鋼材加工,鋁材加工,板材加工,銨東',
+  description,
+  keywords,
   active,
+  lang = 'zh-TW',
 } = Astro.props;
 
-const navItems = [
-  { href: '/', label: '首頁', key: 'home' },
-  { href: '/about', label: '關於銨東', key: 'about' },
-  { href: '/services', label: '加工項目', key: 'services' },
-  { href: '/equipment', label: '設備介紹', key: 'equipment' },
-  { href: '/works', label: '實績案例', key: 'works' },
-  { href: '/quality', label: '品質政策', key: 'quality' },
-];
+// === i18n 字串 ===
+const defaultDescMap = {
+  'zh-TW': '銨東股份有限公司位於台中太平，專營精密 CNC 加工，提供車銑複合、五軸、三軸/四軸銑床、車床、鑄鋁鑄鐵不鏽鋼板材加工服務。歡迎來電詢價。',
+  'en': 'AnDong Co., Ltd. is a precision CNC machining manufacturer in Taichung, Taiwan. Specializing in turn-mill, 5-axis machining, 3/4-axis milling, CNC turning of aluminum, steel, stainless steel and cast iron parts. Request a quote today.',
+  'ja': '銨東株式会社は台湾・台中市太平区に位置する精密CNC加工メーカーです。複合旋削、5軸加工、3/4軸フライス、CNC旋盤による高精度部品加工サービスを提供しています。お見積もりはお気軽にお問い合わせください。',
+};
+
+const defaultKeywordsMap = {
+  'zh-TW': 'CNC加工,台中CNC,台中太平CNC,精密加工,車銑複合,五軸加工,三軸銑床,四軸銑床,鑄鋁加工,鑄鐵加工,不鏽鋼加工,鋼材加工,鋁材加工,板材加工,銨東',
+  'en': 'CNC machining,precision CNC,Taichung CNC,Taiwan CNC manufacturer,turn-mill machining,5-axis machining,3-axis CNC milling,4-axis CNC milling,CNC turning,aluminum machining,stainless steel machining,cast iron machining,OEM machining Taiwan,AnDong',
+  'ja': 'CNC加工,精密加工,台湾CNC,台中CNC,複合旋削,5軸加工,3軸フライス,4軸フライス,CNC旋盤,アルミ加工,ステンレス加工,鋳鉄加工,鋼材加工,OEM加工,銨東',
+};
+
+const finalDescription = description ?? defaultDescMap[lang];
+const finalKeywords = keywords ?? defaultKeywordsMap[lang];
+
+const navItemsMap = {
+  'zh-TW': [
+    { href: '/', label: '首頁', key: 'home' },
+    { href: '/about', label: '關於銨東', key: 'about' },
+    { href: '/services', label: '加工項目', key: 'services' },
+    { href: '/equipment', label: '設備介紹', key: 'equipment' },
+    { href: '/works', label: '實績案例', key: 'works' },
+    { href: '/quality', label: '品質政策', key: 'quality' },
+  ],
+  'en': [
+    { href: '/en', label: 'Home', key: 'home' },
+    { href: '/en/about', label: 'About', key: 'about' },
+    { href: '/en/services', label: 'Services', key: 'services' },
+    { href: '/en/equipment', label: 'Equipment', key: 'equipment' },
+    { href: '/en/works', label: 'Industries', key: 'works' },
+    { href: '/en/quality', label: 'Quality', key: 'quality' },
+  ],
+  'ja': [
+    { href: '/ja', label: 'ホーム', key: 'home' },
+    { href: '/ja/about', label: '会社概要', key: 'about' },
+    { href: '/ja/services', label: '加工項目', key: 'services' },
+    { href: '/ja/equipment', label: '設備紹介', key: 'equipment' },
+    { href: '/ja/works', label: '実績', key: 'works' },
+    { href: '/ja/quality', label: '品質方針', key: 'quality' },
+  ],
+};
+
+const ctaLabel = { 'zh-TW': '聯絡詢價', 'en': 'Contact', 'ja': 'お問い合わせ' }[lang];
+const ctaHref = { 'zh-TW': '/contact', 'en': '/en/contact', 'ja': '/ja/contact' }[lang];
+// 注意：sitemap.xml 由 @astrojs/sitemap 自動產，hreflang 我們在 head 手動加
+
+const navItems = navItemsMap[lang];
+
+const htmlLangMap = { 'zh-TW': 'zh-TW', 'en': 'en', 'ja': 'ja' };
+const ogLocaleMap = { 'zh-TW': 'zh_TW', 'en': 'en_US', 'ja': 'ja_JP' };
+
+// === URL / hreflang ===
+// Astro build.format='file' 模式下 pathname 會帶 .html，先清成乾淨的 URL
+const rawPath = Astro.url.pathname;
+const currentPath = (() => {
+  let p = rawPath.replace(/\.html$/, '');
+  if (p.endsWith('/index')) p = p.slice(0, -6) || '/';
+  return p || '/';
+})();
+const canonicalUrl = `https://adcnc.com.tw${currentPath}`;
+
+// 計算對應的其他語系 URL（剝掉語系前綴 → 對應到 /en/<rest> 或 /ja/<rest>）
+function getPathForLang(targetLang: string) {
+  let bare = currentPath;
+  if (bare.startsWith('/en/')) bare = bare.slice(3);
+  else if (bare.startsWith('/ja/')) bare = bare.slice(3);
+  else if (bare === '/en' || bare === '/ja') bare = '/';
+  if (targetLang === 'zh-TW') return bare;
+  if (bare === '/') return `/${targetLang}`;
+  return `/${targetLang}${bare}`;
+}
+const altZh = `https://adcnc.com.tw${getPathForLang('zh-TW')}`;
+const altEn = `https://adcnc.com.tw${getPathForLang('en')}`;
+const altJa = `https://adcnc.com.tw${getPathForLang('ja')}`;
+
+// === 各語系 footer / brand ===
+const brandFullName = { 'zh-TW': '銨東股份有限公司', 'en': 'AnDong Co., Ltd.', 'ja': '銨東株式会社' }[lang];
+const taxIdLabel = { 'zh-TW': '統一編號', 'en': 'Tax ID', 'ja': '統一番号' }[lang];
+const addressLine = { 'zh-TW': '台中市太平區成功路29巷22號', 'en': 'No. 22, Lane 29, Chenggong Rd., Taiping Dist., Taichung City, Taiwan', 'ja': '台湾・台中市太平区成功路29巷22号' }[lang];
+const phoneLabel = { 'zh-TW': '電話', 'en': 'Tel', 'ja': '電話' }[lang];
+const faxLabel = { 'zh-TW': '傳真', 'en': 'Fax', 'ja': 'FAX' }[lang];
+const sitemapLabel = { 'zh-TW': '網站導覽', 'en': 'Sitemap', 'ja': 'サイトマップ' }[lang];
+const contactLabel = { 'zh-TW': '聯絡我們', 'en': 'Contact Us', 'ja': 'お問い合わせ' }[lang];
+const openHoursLabel = { 'zh-TW': '週一至週六 8:00-17:00', 'en': 'Mon-Sat 8:00-17:00 (GMT+8)', 'ja': '月曜〜土曜 8:00-17:00（GMT+8）' }[lang];
+const langSwitcherLabel = { 'zh-TW': '語言', 'en': 'Language', 'ja': '言語' }[lang];
+
+const phoneText = { 'zh-TW': '撥打電話', 'en': 'Call Now', 'ja': '電話する' }[lang];
+const lineText = { 'zh-TW': 'LINE 諮詢', 'en': 'LINE Chat', 'ja': 'LINE相談' }[lang];
+
+// === JSON-LD LocalBusiness（豐富欄位以利搜尋）===
+const ldBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://adcnc.com.tw/#business',
+  name: brandFullName,
+  alternateName: ['銨東', 'AnDong', 'AnDong CNC'],
+  image: 'https://adcnc.com.tw/og-image.jpg',
+  logo: 'https://adcnc.com.tw/favicon.svg',
+  url: 'https://adcnc.com.tw/',
+  telephone: '+886-4-24965670',
+  faxNumber: '+886-4-24966591',
+  email: 'andong@adcnc.com.tw',
+  priceRange: '$$',
+  taxID: '83181576',
+  foundingDate: '2003',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'No. 22, Lane 29, Chenggong Rd.',
+    addressLocality: 'Taiping District',
+    addressRegion: 'Taichung City',
+    postalCode: '411',
+    addressCountry: 'TW',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 24.1265,
+    longitude: 120.7242,
+  },
+  openingHoursSpecification: [{
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '08:00',
+    closes: '17:00',
+  }],
+  areaServed: [
+    { '@type': 'Country', name: 'Taiwan' },
+    { '@type': 'Country', name: 'United States' },
+    { '@type': 'Country', name: 'Japan' },
+    { '@type': 'Country', name: 'Germany' },
+  ],
+  knowsAbout: [
+    'CNC Machining', 'Precision Machining', '5-axis Machining',
+    'Turn-Mill Machining', 'CNC Turning', 'CNC Milling',
+    'Aluminum Machining', 'Stainless Steel Machining', 'Cast Iron Machining',
+  ],
+  sameAs: ['https://line.me/R/ti/p/@714dgtve'],
+  description: finalDescription,
+};
 ---
 
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang={htmlLangMap[lang]}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Language" content="zh-TW" />
+  <meta http-equiv="Content-Language" content={htmlLangMap[lang]} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <title>{title}</title>
-  <meta name="description" content={description} />
-  <meta name="keywords" content={keywords} />
-  <meta name="author" content="銨東股份有限公司" />
+  <meta name="description" content={finalDescription} />
+  <meta name="keywords" content={finalKeywords} />
+  <meta name="author" content={brandFullName} />
+
+  <link rel="canonical" href={canonicalUrl} />
+  <link rel="alternate" hreflang="zh-TW" href={altZh} />
+  <link rel="alternate" hreflang="en" href={altEn} />
+  <link rel="alternate" hreflang="ja" href={altJa} />
+  <link rel="alternate" hreflang="x-default" href={altZh} />
 
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:locale" content={ogLocaleMap[lang]} />
   <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:url" content={`https://adcnc.com.tw${Astro.url.pathname}`} />
-  <meta property="og:site_name" content="銨東股份有限公司" />
+  <meta property="og:description" content={finalDescription} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content={brandFullName} />
   <meta property="og:image" content="https://adcnc.com.tw/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
+  <meta name="twitter:description" content={finalDescription} />
   <meta name="twitter:image" content="https://adcnc.com.tw/og-image.jpg" />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: '銨東股份有限公司',
-    image: 'https://adcnc.com.tw/og-image.jpg',
-    url: 'https://adcnc.com.tw/',
-    telephone: '04-24965670',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '成功路29巷22號',
-      addressLocality: '太平區',
-      addressRegion: '台中市',
-      addressCountry: 'TW',
-    },
-    description,
-  })} />
+  <script type="application/ld+json" set:html={JSON.stringify(ldBusiness)} />
 </head>
 
 <body>
   <header class="nav">
     <div class="nav-inner">
-      <a href="/" class="brand">
+      <a href={lang === 'zh-TW' ? '/' : `/${lang}`} class="brand">
         <span class="brand-mark">AD</span>
-        <span class="brand-name">銨東股份有限公司</span>
+        <span class="brand-name">{brandFullName}</span>
       </a>
       <nav class="nav-links" id="nav-links">
         {navItems.map(item => (
           <a href={item.href} class={active === item.key ? 'active' : ''}>{item.label}</a>
         ))}
-        <a href="/contact" class={`nav-cta ${active === 'contact' ? 'active' : ''}`}>聯絡詢價</a>
+        <a href={ctaHref} class={`nav-cta ${active === 'contact' ? 'active' : ''}`}>{ctaLabel}</a>
+        <div class="lang-switcher" aria-label={langSwitcherLabel}>
+          <a href={getPathForLang('zh-TW')} class={lang === 'zh-TW' ? 'active' : ''}>中</a>
+          <a href={getPathForLang('en')} class={lang === 'en' ? 'active' : ''}>EN</a>
+          <a href={getPathForLang('ja')} class={lang === 'ja' ? 'active' : ''}>日</a>
+        </div>
       </nav>
       <button class="hamburger" aria-label="選單" onclick="document.getElementById('nav-links').classList.toggle('open')">
         <span></span><span></span><span></span>
@@ -92,43 +221,68 @@ const navItems = [
   <slot />
 
   <div class="float-contact">
-    <a href="tel:0424965670" class="float-btn float-tel" aria-label="撥打電話">
+    <a href="tel:0424965670" class="float-btn float-tel" aria-label={phoneText}>
       <span class="float-icon">📞</span>
-      <span class="float-label">立即撥打</span>
+      <span class="float-label">{phoneText}</span>
     </a>
-    <a href="https://line.me/R/ti/p/@714dgtve" target="_blank" rel="noopener" class="float-btn float-line" aria-label="LINE 聯絡">
+    <a href="https://line.me/R/ti/p/@714dgtve" target="_blank" rel="noopener" class="float-btn float-line" aria-label={lineText}>
       <span class="float-icon">💬</span>
-      <span class="float-label">LINE 諮詢</span>
+      <span class="float-label">{lineText}</span>
     </a>
   </div>
 
   <footer class="footer">
     <div class="footer-inner">
       <div>
-        <div class="brand-name">銨東股份有限公司</div>
-        <p>統一編號 83181576</p>
-        <p>台中市太平區成功路29巷22號</p>
-        <p>電話 04-24965670 ｜ 傳真 04-24966591</p>
+        <div class="brand-name">{brandFullName}</div>
+        <p>{taxIdLabel} 83181576</p>
+        <p>{addressLine}</p>
+        <p>{phoneLabel} 04-24965670 ｜ {faxLabel} 04-24966591</p>
       </div>
       <div>
-        <h4>網站導覽</h4>
+        <h4>{sitemapLabel}</h4>
         <ul>
-          <li><a href="/about">關於銨東</a></li>
-          <li><a href="/services">加工項目</a></li>
-          <li><a href="/equipment">設備介紹</a></li>
-          <li><a href="/works">實績案例</a></li>
-          <li><a href="/contact">聯絡詢價</a></li>
+          {navItems.slice(1).map(item => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+          <li><a href={ctaHref}>{ctaLabel}</a></li>
         </ul>
       </div>
       <div>
-        <h4>聯絡我們</h4>
+        <h4>{contactLabel}</h4>
         <p>andong@adcnc.com.tw</p>
-        <p>週一至週六 8:00-17:00</p>
+        <p>{openHoursLabel}</p>
       </div>
     </div>
     <div class="footer-bottom">
       © 2026 銨東股份有限公司 AnDong Co., Ltd. All rights reserved.
     </div>
   </footer>
+
+  <style>
+    .lang-switcher {
+      display: inline-flex;
+      gap: 4px;
+      margin-left: 12px;
+      padding: 4px 8px;
+      border-left: 1px solid #d9d9d9;
+    }
+    .lang-switcher a {
+      padding: 2px 6px;
+      font-size: 13px;
+      color: #595959;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+    .lang-switcher a:hover { background: #f0f0f0; }
+    .lang-switcher a.active {
+      color: #003a8c;
+      font-weight: 600;
+      background: #e6f4ff;
+    }
+    @media (max-width: 768px) {
+      .lang-switcher { margin-left: 0; margin-top: 8px; border-left: none; border-top: 1px solid #d9d9d9; padding-top: 8px; }
+    }
+  </style>
 </body>
 </html>

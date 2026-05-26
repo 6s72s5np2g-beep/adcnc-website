@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const services = [
+  {
+    id: 'turn-mill',
+    title: '複合旋削加工',
+    desc: '複合旋削機は1段取りで旋削とフライス加工を完結でき、複数回の段取り誤差を排除し、精度と生産効率を向上させます。複雑形状のシャフト類、異形特徴を含む精密部品に最適です。',
+    items: ['シャフト部品の一体加工', '異形穴・キー溝・ねじ加工を1サイクルで', '段取り誤差低減・繰り返し精度向上', '中〜高精度の量産に適合'],
+    materials: '炭素鋼、合金鋼、ステンレス鋼、アルミ合金、銅合金',
+    icon: '⚙',
+  },
+  {
+    id: '5-axis',
+    title: '5軸加工',
+    desc: '5軸マシニングセンターは3+2位置決め方式により、A/C軸でワークを定位後、3軸切削を実行します。1段取りで多面・多角度加工を完結でき、繰り返し段取り誤差を排除します。多面構造部品、治具、金型部品、精密機構部品に最適です。',
+    items: ['1段取りで多面加工完結', '多角度の傾斜穴・傾斜面切削', '段取り・治具コスト低減', '寸法一貫性の向上'],
+    materials: 'アルミ合金、チタン合金、ステンレス鋼、工具鋼、構造用鋼',
+    icon: '🔧',
+    photo: '/images/machine-5-axis.png',
+    photoAlt: '5軸マシニングセンター — 主軸とワーク',
+  },
+  {
+    id: 'mill-3-4',
+    title: '3軸／4軸フライス加工',
+    desc: '3軸フライスは平面、輪郭、穴あけ、タップ加工などの基本加工を担当。4軸加工では回転軸が加わり、円周等分穴やカムなど回転特徴を持つ部品の加工が可能です。',
+    items: ['金型、治具、構造部品', 'フランジ、ベース、固定座', 'カム、インデックス盤など回転部品（4軸）', '量産・試作いずれも対応'],
+    materials: 'アルミ合金、鋼材、鋳鉄、ステンレス鋼、エンジニアプラスチック',
+    icon: '📐',
+    photo: '/images/machine-4-axis-bridge.png',
+    photoAlt: '4軸ブリッジ式フライス加工 — 回転軸と治具特写',
+  },
+  {
+    id: 'turning',
+    title: 'CNC旋盤加工',
+    desc: 'CNC旋盤はシャフト、スリーブ、円盤などの回転体部品の量産に特化。動力タレットとサブスピンドルを備えた旋盤では、フライス、穴あけ、タップ工程も統合可能です。',
+    items: ['シャフト、スリーブ、ブッシュ、心軸', 'フランジ、円盤、コネクター', 'ねじ、逃げ溝、油溝', '小ロット試作から大量生産まで'],
+    materials: '鋼材（S45C/SCM440）、ステンレス（SUS304/316）、アルミ合金、銅、プラスチック',
+    icon: '🔩',
+  },
+  {
+    id: 'cast',
+    title: '鋳アルミ／鋳鉄加工',
+    desc: '鋳造後の機械加工を承ります。鋳鉄（FCD250、FC250）、鋳アルミ（A356、ADC12）などの大物加工に対応し、機械ベース、減速機ケース、油圧マニホールド、エンジンブロック等に適しています。',
+    items: ['機械ベース、大物加工', '減速機ケース、ギアボックス', '油圧マニホールド', '自動車部品、エンジンケース'],
+    materials: 'FCD250、FCD400、FC250、A356、ADC12等の鋳鉄・鋳アルミ素材',
+    icon: '🏗️',
+  },
+  {
+    id: 'stainless',
+    title: 'ステンレス／鋼材／板材加工',
+    desc: 'フル素材対応の加工サービスを提供。食品グレードステンレス、構造用鋼、アルミ板・押出材、銅板など、お客様要望によって銨東による材料調達、または材料支給のいずれにも対応します。',
+    items: ['食品グレードステンレス部品', 'アルミ板・押出構造部品', '構造用鋼・バネ鋼部品', '銅板・銅合金導電部品'],
+    materials: 'SUS304、SUS316、SUS440、A6061、A7075、A2024、S45C、SCM440、SKシリーズ工具鋼',
+    icon: '⚒️',
+  },
+];
+---
+
+<Layout
+  title="加工項目｜複合旋削・5軸・3/4軸フライス・CNC旋盤｜銨東株式会社"
+  description="銨東株式会社は、複合旋削加工、5軸加工、3/4軸フライス加工、CNC旋盤加工、鋳アルミ・鋳鉄加工、ステンレス・鋼材・アルミ・板材加工を提供するフルラインCNC加工メーカー。お見積もりはお気軽に。"
+  active="services"
+  lang="ja"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/ja">ホーム</a> / 加工項目</div>
+      <h1>加工項目</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-6" style="margin-bottom: 64px;">
+        {services.map(s => (
+          <a href={`#${s.id}`} class="card">
+            <div class="card-icon">{s.icon}</div>
+            <h3>{s.title}</h3>
+            <p>{s.desc.slice(0, 50)}…</p>
+          </a>
+        ))}
+      </div>
+
+      {services.map((s, idx) => (
+        <article id={s.id} style={`padding: 64px 0; ${idx > 0 ? 'border-top: 1px solid var(--gray-200);' : ''}`}>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;" class="service-row">
+            <div>
+              <div style="font-size: 56px; margin-bottom: 16px;">{s.icon}</div>
+              <h2 style="font-size: clamp(24px, 3vw, 36px); color: var(--gray-900); margin-bottom: 16px; font-weight: 800;">{s.title}</h2>
+              <p style="color: var(--gray-600); font-size: 16px; margin-bottom: 24px;">{s.desc}</p>
+              <h3 style="color: var(--primary); font-size: 16px; margin-bottom: 8px; font-weight: 700;">適用部品例</h3>
+              <ul class="list">
+                {s.items.map(item => <li>{item}</li>)}
+              </ul>
+              <h3 style="color: var(--primary); font-size: 16px; margin: 24px 0 8px; font-weight: 700;">対応素材</h3>
+              <p style="color: var(--gray-700, #334155);">{s.materials}</p>
+              <a href="/ja/contact" class="btn btn-blue" style="margin-top: 24px;">{s.title}のお見積もり</a>
+            </div>
+            <div style="aspect-ratio: 4/3; background: var(--gray-100); border-radius: 12px; overflow: hidden; display: grid; place-items: center; color: var(--gray-400);">
+              {s.photo ? (
+                <img src={s.photo} alt={s.photoAlt} loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              ) : (
+                <span>📷 {s.title}加工写真</span>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 768px) {
+      .service-row { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>特殊な加工ご要望はございますか？</h2>
+      <p>小ロット試作・大量生産いずれも、銨東がカスタマイズソリューションをご提供します</p>
+      <a href="/ja/contact" class="btn btn-primary btn-lg">お見積もり依頼</a>
+    </div>
+  </section>
+</Layout>

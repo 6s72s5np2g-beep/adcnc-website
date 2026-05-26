@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="品質方針｜CNC加工の品質管理と検査プロセス｜銨東株式会社"
+  description="銨東株式会社の品質方針「品質第一・納期厳守・お客様満足」。初品検査、工程内検査、出荷検査の3段階で品質を担保。CMM、投影機、表面粗さ計など精密測定機器を完備。"
+  active="quality"
+  lang="ja"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/ja">ホーム</a> / 品質方針</div>
+      <h1>品質方針</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">全工程が品質の証明</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>品質方針</h2>
+      <div style="background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: #fff; padding: 48px; border-radius: 16px; text-align: center; margin: 24px 0 48px;">
+        <p style="font-size: clamp(22px, 3vw, 32px); font-weight: 700; margin: 0; letter-spacing: 2px;">
+          品質第一・納期厳守・お客様満足
+        </p>
+      </div>
+
+      <h2>品質管理プロセス</h2>
+      <p>銨東は3段階の品質管理を実施し、素材入荷から完成品出荷まで全工程で品質を担保し、お客様の図面要求への適合を確保します。</p>
+
+      <div class="grid-3" style="margin-top: 32px;">
+        <div class="card">
+          <div class="card-icon" style="color: var(--primary);">①</div>
+          <h3>初品検査</h3>
+          <p>各受注の初品を100%全寸法検査し、加工プログラム・治具設定の正確性を確認してから量産に移行します。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="color: var(--primary);">②</div>
+          <h3>工程内検査</h3>
+          <p>量産中に一定バッチごとに重要寸法を抜き取り検査し、刀具摩耗や加工ドリフトを早期発見します。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="color: var(--primary);">③</div>
+          <h3>出荷検査</h3>
+          <p>出荷前の最終検査を行い、お客様要求に応じて寸法検査報告書（FAI / IPQC）を発行し、製品に同梱します。</p>
+        </div>
+      </div>
+
+      <h2>検査機器</h2>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: start; margin-top: 16px;" class="quality-equip-row">
+        <ul class="list">
+          <li><strong>三次元測定機（CMM）</strong>— 複雑寸法の精密測定</li>
+          <li>投影機 — 輪郭、穴位置、角度測定</li>
+          <li>2.5次元画像測定機 — 平面寸法の高速測定</li>
+          <li>表面粗さ計 — Ra / Rz 表面粗さ検査</li>
+          <li>デジタルノギス、マイクロメータ、デプスゲージ — 基本寸法の高速測定</li>
+          <li>プラグゲージ、リングゲージ、ピンゲージ — 穴径・軸径の公差検査</li>
+        </ul>
+        <figure style="margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200);">
+          <img src="/images/cmm-inspection.png" alt="銨東 三次元測定機 (CMM) による精密部品検査" loading="lazy" style="width: 100%; height: auto; display: block;" />
+          <figcaption style="padding: 10px 14px; font-size: 13px; color: var(--gray-600); background: var(--gray-100);">三次元測定機による精密寸法検査</figcaption>
+        </figure>
+      </div>
+      <style>
+        @media (max-width: 768px) {
+          .quality-equip-row { grid-template-columns: 1fr !important; }
+        }
+      </style>
+
+      <h2>機械連網リアルタイム追跡</h2>
+      <p>銨東は自社開発の生産管理システムを機械連網リアルタイム監視と統合しており、各受注の加工進捗、機械稼働、シフト別生産数をリアルタイムで記録します。品質問題発生時には加工時刻と機械まで遡及可能で、完全な品質履歴を構築しています。</p>
+
+      <h2>認証と保証</h2>
+      <ul class="list">
+        <li>全出荷品はお客様の図面公差要求に適合</li>
+        <li>材質証明書（Mill Cert）と検査報告書を提供</li>
+        <li>不良品の保証再加工または返金対応</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>特別な品質ご要求はございますか？</h2>
+      <p>カスタマイズ検査報告書・品質仕様についてお気軽にお問い合わせください</p>
+      <a href="/ja/contact" class="btn btn-primary btn-lg">品質管理に連絡</a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const services = [
+  {
+    id: 'turn-mill',
+    title: 'Turn-Mill Machining',
+    desc: 'Turn-mill centers complete turning and milling operations in a single setup, eliminating cumulative fixturing errors and improving both precision and throughput. Ideal for complex shafts and precision parts with off-axis features.',
+    items: ['Single-setup shaft manufacturing', 'Off-axis holes, keyways, and threads in one cycle', 'Reduced fixturing error, high repeatability', 'Suitable for medium-to-high precision production'],
+    materials: 'Carbon steel, alloy steel, stainless steel, aluminum alloys, copper alloys',
+    icon: '⚙',
+  },
+  {
+    id: '5-axis',
+    title: '5-Axis Machining',
+    desc: 'Our 5-axis machining centers use 3+2 positioning — A/C axes orient the workpiece, then 3-axis cutting executes the toolpath. Multi-face, multi-angle machining is completed in a single setup, eliminating fixturing error. Ideal for structural parts, fixtures, mold components, and precision mechanisms.',
+    items: ['Multi-face machining in one setup', 'Angled holes and inclined surfaces', 'Reduced fixturing and tooling cost', 'Improved dimensional consistency'],
+    materials: 'Aluminum alloys, titanium alloys, stainless steel, tool steel, structural steel',
+    icon: '🔧',
+    photo: '/images/machine-5-axis.png',
+    photoAlt: '5-axis machining center — spindle and workpiece',
+  },
+  {
+    id: 'mill-3-4',
+    title: '3 / 4-Axis Milling',
+    desc: '3-axis milling handles facing, contouring, drilling, and tapping for general production work. 4-axis milling adds a rotary axis for parts with circular-pattern features such as indexed holes and cams.',
+    items: ['Molds, fixtures, structural components', 'Flanges, base plates, mounting brackets', 'Cams, indexing plates (4-axis)', 'Prototype to production runs'],
+    materials: 'Aluminum alloys, steel, cast iron, stainless steel, engineering plastics',
+    icon: '📐',
+    photo: '/images/machine-4-axis-bridge.png',
+    photoAlt: '4-axis bridge milling — rotary axis and fixture detail',
+  },
+  {
+    id: 'turning',
+    title: 'CNC Turning',
+    desc: 'CNC turning specializes in production runs of shafts, sleeves, and disc-type parts. Lathes equipped with driven tooling and sub-spindle can integrate milling, drilling, and tapping operations.',
+    items: ['Shafts, sleeves, bushings, spindles', 'Flanges, discs, connectors', 'Threads, undercuts, grooves', 'Prototype to high-volume production'],
+    materials: 'Steel (S45C/SCM440), stainless steel (SUS304/316), aluminum, copper, plastics',
+    icon: '🔩',
+  },
+  {
+    id: 'cast',
+    title: 'Cast Aluminum / Cast Iron Machining',
+    desc: 'Post-casting machining for ductile iron (FCD250, FC250) and cast aluminum (A356, ADC12) parts. Suited to large parts such as machine bases, gearbox housings, hydraulic manifolds, and engine blocks.',
+    items: ['Machine bases and large structural parts', 'Gearbox and reduction housings', 'Hydraulic manifolds', 'Automotive parts and engine housings'],
+    materials: 'FCD250, FCD400, FC250, A356, ADC12 cast iron and cast aluminum alloys',
+    icon: '🏗️',
+  },
+  {
+    id: 'stainless',
+    title: 'Stainless Steel / Steel / Plate Machining',
+    desc: 'Full material range including food-grade stainless components, structural steel, aluminum plate and extrusion, and copper plate. Materials can be sourced by AnDong or supplied by the customer.',
+    items: ['Food-grade stainless steel components', 'Aluminum plate and extruded structural parts', 'Structural steel and spring steel parts', 'Copper plate and conductive parts'],
+    materials: 'SUS304, SUS316, SUS440, A6061, A7075, A2024, S45C, SCM440, SK-series tool steels',
+    icon: '⚒️',
+  },
+];
+---
+
+<Layout
+  title="Services | Turn-Mill, 5-Axis, 3/4-Axis Milling, CNC Turning | AnDong Co., Ltd."
+  description="Full CNC machining services from AnDong Co., Ltd.: turn-mill machining, 5-axis machining, 3/4-axis milling, CNC turning, cast aluminum and cast iron machining, plus stainless steel, steel, aluminum, and plate machining. Request a quote."
+  active="services"
+  lang="en"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en">Home</a> / Services</div>
+      <h1>Machining Services</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-6" style="margin-bottom: 64px;">
+        {services.map(s => (
+          <a href={`#${s.id}`} class="card">
+            <div class="card-icon">{s.icon}</div>
+            <h3>{s.title}</h3>
+            <p>{s.desc.slice(0, 60)}…</p>
+          </a>
+        ))}
+      </div>
+
+      {services.map((s, idx) => (
+        <article id={s.id} style={`padding: 64px 0; ${idx > 0 ? 'border-top: 1px solid var(--gray-200);' : ''}`}>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;" class="service-row">
+            <div>
+              <div style="font-size: 56px; margin-bottom: 16px;">{s.icon}</div>
+              <h2 style="font-size: clamp(24px, 3vw, 36px); color: var(--gray-900); margin-bottom: 16px; font-weight: 800;">{s.title}</h2>
+              <p style="color: var(--gray-600); font-size: 16px; margin-bottom: 24px;">{s.desc}</p>
+              <h3 style="color: var(--primary); font-size: 16px; margin-bottom: 8px; font-weight: 700;">Typical Applications</h3>
+              <ul class="list">
+                {s.items.map(item => <li>{item}</li>)}
+              </ul>
+              <h3 style="color: var(--primary); font-size: 16px; margin: 24px 0 8px; font-weight: 700;">Materials</h3>
+              <p style="color: var(--gray-700, #334155);">{s.materials}</p>
+              <a href="/en/contact" class="btn btn-blue" style="margin-top: 24px;">Get a Quote for {s.title}</a>
+            </div>
+            <div style="aspect-ratio: 4/3; background: var(--gray-100); border-radius: 12px; overflow: hidden; display: grid; place-items: center; color: var(--gray-400);">
+              {s.photo ? (
+                <img src={s.photo} alt={s.photoAlt} loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              ) : (
+                <span>📷 {s.title} Photo</span>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 768px) {
+      .service-row { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Have a custom machining need?</h2>
+      <p>Whether prototyping or production, AnDong delivers tailored solutions</p>
+      <a href="/en/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+    </div>
+  </section>
+</Layout>

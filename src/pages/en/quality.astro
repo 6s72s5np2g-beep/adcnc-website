@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Quality Policy | CNC Machining Quality Control & Inspection | AnDong Co., Ltd."
+  description="AnDong's quality policy: Quality First, On-Time Delivery, Customer Satisfaction. Three-stage inspection (FAI, in-process, final), with CMM, profile projector, surface roughness tester, and full-range precision measurement equipment."
+  active="quality"
+  lang="en"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en">Home</a> / Quality</div>
+      <h1>Quality Policy</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">Every process step is proof of our quality</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Our Quality Commitment</h2>
+      <div style="background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: #fff; padding: 48px; border-radius: 16px; text-align: center; margin: 24px 0 48px;">
+        <p style="font-size: clamp(22px, 3vw, 32px); font-weight: 700; margin: 0; letter-spacing: 2px;">
+          Quality First · On-Time Delivery · Customer Satisfaction
+        </p>
+      </div>
+
+      <h2>Quality Control Process</h2>
+      <p>AnDong runs three stages of quality control, from raw material to finished part shipment, to ensure every part meets the customer's drawing requirements.</p>
+
+      <div class="grid-3" style="margin-top: 32px;">
+        <div class="card">
+          <div class="card-icon" style="color: var(--primary);">①</div>
+          <h3>First-Article Inspection (FAI)</h3>
+          <p>100% dimensional inspection on the first part of every order to verify program and fixturing before production runs begin.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="color: var(--primary);">②</div>
+          <h3>In-Process Inspection</h3>
+          <p>Periodic sampling of critical dimensions during production to catch tool wear and dimensional drift early.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="color: var(--primary);">③</div>
+          <h3>Final Inspection</h3>
+          <p>Pre-shipment final inspection; dimensional inspection reports (FAI / IPQC) issued per customer requirement and shipped with parts.</p>
+        </div>
+      </div>
+
+      <h2>Inspection Equipment</h2>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: start; margin-top: 16px;" class="quality-equip-row">
+        <ul class="list">
+          <li><strong>Coordinate Measuring Machine (CMM)</strong> — complex precision dimensional measurement</li>
+          <li>Profile projector — contour, hole position, and angle measurement</li>
+          <li>2.5D vision measurement system — fast 2D dimensional inspection</li>
+          <li>Surface roughness tester — Ra / Rz surface finish inspection</li>
+          <li>Digital calipers, micrometers, depth gauges — fast basic dimensional checks</li>
+          <li>Plug gauges, ring gauges, pin gauges — hole and shaft tolerance verification</li>
+        </ul>
+        <figure style="margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200);">
+          <img src="/images/cmm-inspection.png" alt="AnDong CMM inspection of precision machined parts" loading="lazy" style="width: 100%; height: auto; display: block;" />
+          <figcaption style="padding: 10px 14px; font-size: 13px; color: var(--gray-600); background: var(--gray-100);">CMM inspection of precision parts</figcaption>
+        </figure>
+      </div>
+      <style>
+        @media (max-width: 768px) {
+          .quality-equip-row { grid-template-columns: 1fr !important; }
+        }
+      </style>
+
+      <h2>Networked Real-Time Traceability</h2>
+      <p>AnDong's in-house production management system, integrated with networked machine monitoring, records production progress, machine operation status, and shift output for every order in real time. Any quality issue can be traced back to the machine and timestamp, building a complete quality history.</p>
+
+      <h2>Certifications &amp; Guarantees</h2>
+      <ul class="list">
+        <li>All shipped parts conform to customer drawing tolerances</li>
+        <li>Material certificates (Mill Certs) and inspection reports provided</li>
+        <li>Defective parts are reworked or refunded under warranty</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Have specific quality requirements?</h2>
+      <p>Contact us to discuss custom inspection reports and quality specifications</p>
+      <a href="/en/contact" class="btn btn-primary btn-lg">Contact QA</a>
+    </div>
+  </section>
+</Layout>

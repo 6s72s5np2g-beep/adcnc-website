@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const machines = [
+  {
+    name: 'NSV102am Vertical Machining Center',
+    brand: 'YCM (Yeong Chin Machinery)',
+    type: '3-Axis Milling',
+    specs: { 'Travel (X/Y/Z)': '1020 / 510 / 610 mm', 'Spindle Speed': '12,000 RPM', 'Tool Magazine': '30 tools', 'Controller': 'FANUC 32i' },
+  },
+  {
+    name: 'VII-20 CNC Lathe',
+    brand: 'VICTOR Taichung',
+    type: 'CNC Turning',
+    specs: { 'Spindle Speed': '3,500 RPM', 'Tool Magazine': '10 tools', 'Controller': 'FANUC 0i-TD' },
+  },
+  {
+    name: 'NSV106 5-Axis Machining Center',
+    brand: 'YCM (Yeong Chin Machinery)',
+    type: '5-Axis Machining (3+2)',
+    specs: { 'Travel (X/Y/Z)': '1020 / 610 / 610 mm', 'Rotary (A/C)': '±120° / 360°', 'Spindle Speed': '15,000 RPM', 'Tool Magazine': '30 tools', 'Controller': 'FANUC 0i-MF' },
+  },
+  {
+    name: 'NT-2000LY Turn-Mill Center',
+    brand: 'YCM (Yeong Chin Machinery)',
+    type: 'Turn-Mill Machining',
+    specs: { 'Turning Diameter': '∅250 mm', 'Turning Length': '450 mm', 'Y-Axis Travel': '+50 / −40 mm', 'Spindle Speed': '5,000 RPM', 'Milling Spindle': 'B-axis ±100°' },
+  },
+  {
+    name: 'NP16 CNC Lathe',
+    brand: 'VICTOR Taichung',
+    type: 'CNC Turning',
+    specs: { 'Turning Diameter': '∅200 mm', 'Turning Length': '350 mm', 'Spindle Speed': '6,000 RPM', 'Tool Magazine': '12 tools', 'Controller': 'FANUC 0i-TF' },
+  },
+  {
+    name: 'Brother High-Speed Machining Center ①',
+    brand: 'Brother Industries',
+    type: 'Compact High-Speed Machining',
+    specs: { 'Spindle Speed': '10,000 RPM', 'Application': 'Precision small-part machining' },
+  },
+  {
+    name: 'Brother High-Speed Machining Center ②',
+    brand: 'Brother Industries',
+    type: 'Compact High-Speed Machining',
+    specs: { 'Spindle Speed': '10,000 RPM', 'Application': 'Precision small-part machining' },
+  },
+  {
+    name: 'Brother High-Speed Machining Center ③',
+    brand: 'Brother Industries',
+    type: 'Compact High-Speed Machining',
+    specs: { 'Spindle Speed': '10,000 RPM', 'Application': 'Precision small-part machining' },
+  },
+];
+---
+
+<Layout
+  title="Equipment | CNC Machine Lineup | AnDong Co., Ltd."
+  description="AnDong's machine lineup includes 5-axis machining centers, turn-mill centers, 3-axis VMCs, and CNC lathes from leading brands such as YCM (Yeong Chin), VICTOR Taichung, and Brother Industries."
+  active="equipment"
+  lang="en"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en">Home</a> / Equipment</div>
+      <h1>Equipment</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">Full CNC machine lineup from leading brands, with networked real-time monitoring</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Machine Lineup</h2>
+      <p class="section-sub">All machines are connected for real-time production monitoring and traceability</p>
+      <div class="grid-3">
+        {machines.map(m => (
+          <div class="spec-card">
+            <div class="spec-img">📷 {m.name}</div>
+            <div class="spec-body">
+              <h3>{m.name}</h3>
+              <div class="brand-tag">{m.brand} ｜ {m.type}</div>
+              <table class="spec-table">
+                <tbody>
+                  {Object.entries(m.specs).map(([k, v]) => (
+                    <tr><th>{k}</th><td>{v}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p style="text-align: center; color: var(--gray-600); margin-top: 32px; font-size: 14px;">
+        * Specifications shown are representative. Auxiliary equipment available on request.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Networked Real-Time Monitoring</h2>
+      <p class="section-sub">Every machine is connected to our production management system for live status tracking</p>
+      <div class="grid-3">
+        <div class="feature">
+          <h3>Live Machine Status</h3>
+          <p>Running, idle, and alarm states are reported in real time for transparent production visibility</p>
+        </div>
+        <div class="feature">
+          <h3>Output Tracking</h3>
+          <p>Part counts are reported automatically; shift-level output drives accurate lead-time forecasts</p>
+        </div>
+        <div class="feature">
+          <h3>Quality Traceability</h3>
+          <p>Every order links to machining records — issues are traceable to machine and timestamp</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Need detailed equipment specs?</h2>
+      <p>Visit our facility or call us to discuss machining capabilities</p>
+      <a href="/en/contact" class="btn btn-primary btn-lg">Contact AnDong</a>
+    </div>
+  </section>
+</Layout>

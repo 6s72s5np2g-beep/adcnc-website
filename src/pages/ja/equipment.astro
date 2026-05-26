@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const machines = [
+  {
+    name: 'NSV102am 立形マシニングセンター',
+    brand: 'YCM 永進機械',
+    type: '3軸フライス',
+    specs: { 'ストローク (X/Y/Z)': '1020 / 510 / 610 mm', '主軸回転数': '12,000 RPM', 'ツールマガジン': '30本', '制御装置': 'FANUC 32i' },
+  },
+  {
+    name: 'VII-20 CNC旋盤',
+    brand: 'VICTOR 台中精機',
+    type: 'CNC旋盤',
+    specs: { '主軸回転数': '3,500 RPM', 'ツールマガジン': '10本', '制御装置': 'FANUC 0i-TD' },
+  },
+  {
+    name: 'NSV106 5軸マシニングセンター',
+    brand: 'YCM 永進機械',
+    type: '5軸加工（3+2）',
+    specs: { 'ストローク (X/Y/Z)': '1020 / 610 / 610 mm', '回転軸 (A/C)': '±120° / 360°', '主軸回転数': '15,000 RPM', 'ツールマガジン': '30本', '制御装置': 'FANUC 0i-MF' },
+  },
+  {
+    name: 'NT-2000LY 複合旋削機',
+    brand: 'YCM 永進機械',
+    type: '複合旋削加工',
+    specs: { '旋削直径': '∅250 mm', '旋削長さ': '450 mm', 'Y軸ストローク': '+50 / −40 mm', '主軸回転数': '5,000 RPM', 'フライス主軸': 'B軸 ±100°' },
+  },
+  {
+    name: 'NP16 CNC旋盤',
+    brand: 'VICTOR 台中精機',
+    type: 'CNC旋盤',
+    specs: { '旋削直径': '∅200 mm', '旋削長さ': '350 mm', '主軸回転数': '6,000 RPM', 'ツールマガジン': '12本', '制御装置': 'FANUC 0i-TF' },
+  },
+  {
+    name: 'Brother 高速加工機 ①',
+    brand: 'Brother ブラザー工業',
+    type: '小型高速加工',
+    specs: { '主軸回転数': '10,000 RPM', '用途': '精密小物加工' },
+  },
+  {
+    name: 'Brother 高速加工機 ②',
+    brand: 'Brother ブラザー工業',
+    type: '小型高速加工',
+    specs: { '主軸回転数': '10,000 RPM', '用途': '精密小物加工' },
+  },
+  {
+    name: 'Brother 高速加工機 ③',
+    brand: 'Brother ブラザー工業',
+    type: '小型高速加工',
+    specs: { '主軸回転数': '10,000 RPM', '用途': '精密小物加工' },
+  },
+];
+---
+
+<Layout
+  title="設備紹介｜CNC加工機ラインナップ｜銨東株式会社"
+  description="銨東株式会社の機械ラインナップ：永進機械YCM、台中精機VICTOR、ブラザー工業BrotherなどブランドのCNC機械を装備。5軸マシニング、複合旋削、立形マシニング、CNC旋盤を網羅。"
+  active="equipment"
+  lang="ja"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/ja">ホーム</a> / 設備紹介</div>
+      <h1>設備紹介</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">国内外大手ブランドのCNC加工機を網羅し、機械連網リアルタイム監視を導入</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">機械ラインナップ</h2>
+      <p class="section-sub">全機械を生産管理システムと連携し、リアルタイム稼働監視・追跡を実現</p>
+      <div class="grid-3">
+        {machines.map(m => (
+          <div class="spec-card">
+            <div class="spec-img">📷 {m.name}</div>
+            <div class="spec-body">
+              <h3>{m.name}</h3>
+              <div class="brand-tag">{m.brand} ｜ {m.type}</div>
+              <table class="spec-table">
+                <tbody>
+                  {Object.entries(m.specs).map(([k, v]) => (
+                    <tr><th>{k}</th><td>{v}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p style="text-align: center; color: var(--gray-600); margin-top: 32px; font-size: 14px;">
+        ※ 上記仕様は代表値です。補助機械についてはお問い合わせください。
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">機械連網リアルタイム監視</h2>
+      <p class="section-sub">全機械を生産管理システムへ連携し、リアルタイムで加工状況を把握</p>
+      <div class="grid-3">
+        <div class="feature">
+          <h3>リアルタイム状態</h3>
+          <p>機械の稼働、待機、アラーム状態を即時アップロード、生産進捗を透明化</p>
+        </div>
+        <div class="feature">
+          <h3>生産数追跡</h3>
+          <p>加工数自動報告、シフト別生産数を正確に集計し、納期予測を可能に</p>
+        </div>
+        <div class="feature">
+          <h3>品質追跡</h3>
+          <p>各受注に加工記録を紐付け、品質問題発生時に加工時刻と機械まで遡及可能</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>詳細な設備仕様が必要ですか？</h2>
+      <p>工場見学またはお電話にて加工能力についてご相談ください</p>
+      <a href="/ja/contact" class="btn btn-primary btn-lg">銨東にお問い合わせ</a>
+    </div>
+  </section>
+</Layout>

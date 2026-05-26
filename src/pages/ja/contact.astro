@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+---
+
+<Layout
+  title="お問い合わせ・お見積もり｜銨東株式会社｜CNC加工お見積もりフォーム"
+  description="銨東株式会社のお問い合わせ情報とお見積もりフォーム。台湾・台中市太平区、電話 +886-4-24965670、メール andong@adcnc.com.tw。図面・仕様・数量をお送りいただければ、当日中にお見積もりをご回答します。"
+  active="contact"
+  lang="ja"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/ja">ホーム</a> / お問い合わせ</div>
+      <h1>お問い合わせ・お見積もり</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">図面・仕様・数量をお送りいただければ、当日中にお見積もりをご回答します</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width: 1100px;">
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px;" class="contact-row">
+        <!-- お見積もりフォーム -->
+        <div>
+          <h2 style="font-size: clamp(24px, 2.5vw, 32px); color: var(--gray-900); margin-bottom: 8px; font-weight: 700;">オンラインお見積もり</h2>
+          <p style="color: var(--gray-600); margin-bottom: 32px;">下記フォームをご記入ください。1営業日以内にお見積もりをご回答いたします。お電話 +886-4-24965670 やLINEでもお気軽にどうぞ。</p>
+
+          <form action={FORMSPREE_ENDPOINT} method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+              <div class="form-field">
+                <label>ご担当者名 <span class="form-required">*</span></label>
+                <input type="text" name="name" required />
+              </div>
+              <div class="form-field">
+                <label>会社名</label>
+                <input type="text" name="company" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label>電話番号 <span class="form-required">*</span></label>
+                <input type="tel" name="phone" required />
+              </div>
+              <div class="form-field">
+                <label>E-mail <span class="form-required">*</span></label>
+                <input type="email" name="email" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label>予定数量</label>
+                <input type="text" name="quantity" placeholder="例：50個／月1,000個など" />
+              </div>
+              <div class="form-field">
+                <label>納期ご希望</label>
+                <input type="text" name="deadline" placeholder="例：2週間以内／急ぎ" />
+              </div>
+            </div>
+
+            <div class="form-field" style="margin-bottom: 16px;">
+              <label>お問い合わせ内容／図面ご説明 <span class="form-required">*</span></label>
+              <textarea name="message" required placeholder="部品用途、素材、ご希望の加工内容、特殊ご要求などをご記入ください…"></textarea>
+            </div>
+
+            <div class="form-field" style="margin-bottom: 24px;">
+              <label>図面アップロード（PDF / JPG / DWG / STEP、複数ファイル可）</label>
+              <input type="file" name="attachment" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.step,.stp,.iges" />
+              <p class="form-help">1ファイル10MBまで。大容量の場合は andong@adcnc.com.tw までメールでお送りください</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">お問い合わせを送信</button>
+            <p class="form-help" style="text-align: center; margin-top: 12px;">送信後に自動返信メールをお送りします。迷惑メールフォルダもご確認ください</p>
+          </form>
+        </div>
+
+        <!-- 連絡先情報 -->
+        <div>
+          <h2 style="font-size: clamp(24px, 2.5vw, 32px); color: var(--gray-900); margin-bottom: 24px; font-weight: 700;">連絡先情報</h2>
+
+          <div class="card" style="padding: 28px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: start; gap: 16px;">
+              <div style="font-size: 28px;">📞</div>
+              <div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 4px;">電話</div>
+                <a href="tel:+886424965670" style="font-size: 22px; font-weight: 700; color: var(--primary);">+886-4-24965670</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 28px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: start; gap: 16px;">
+              <div style="font-size: 28px;">💬</div>
+              <div style="flex: 1;">
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 4px;">LINE公式アカウント</div>
+                <a href="https://line.me/R/ti/p/@714dgtve" target="_blank" rel="noopener" style="font-size: 18px; font-weight: 700; color: #06c755;">@714dgtve</a>
+                <div style="margin-top: 16px; max-width: 200px; background: #fff; border: 1px solid var(--gray-200); border-radius: 8px; padding: 12px;">
+                  <img src="/images/line-qr.png" alt="銨東株式会社 LINE公式アカウントQRコード" style="width: 100%; display: block;" />
+                  <p style="text-align: center; font-size: 12px; color: var(--gray-600); margin-top: 8px;">スマホで読み取って友だち追加</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 28px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: start; gap: 16px;">
+              <div style="font-size: 28px;">✉️</div>
+              <div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 4px;">メール</div>
+                <a href="mailto:andong@adcnc.com.tw" style="font-size: 16px; font-weight: 600; color: var(--gray-900);">andong@adcnc.com.tw</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 28px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: start; gap: 16px;">
+              <div style="font-size: 28px;">📍</div>
+              <div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 4px;">所在地</div>
+                <div style="font-weight: 600; line-height: 1.6;">台湾 台中市太平区<br />成功路29巷22号 （郵便番号411）</div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-top: 4px;">FAX +886-4-24966591</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 28px;">
+            <div style="display: flex; align-items: start; gap: 16px;">
+              <div style="font-size: 28px;">🕐</div>
+              <div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 4px;">営業時間</div>
+                <div style="font-weight: 600;">月曜〜土曜</div>
+                <div>08:00〜17:00（GMT+8）</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Maps -->
+      <div style="margin-top: 64px;">
+        <h2 style="font-size: clamp(24px, 2.5vw, 32px); color: var(--gray-900); margin-bottom: 24px; font-weight: 700; text-align: center;">アクセス</h2>
+        <div style="aspect-ratio: 16/7; border-radius: 16px; overflow: hidden; border: 1px solid var(--gray-200);">
+          <iframe
+            src="https://maps.google.com/maps?q=No.+22,+Lane+29,+Chenggong+Rd.,+Taiping+Dist.,+Taichung+City,+Taiwan&hl=ja&z=17&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="銨東株式会社 所在地マップ"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 900px) {
+      .contact-row { grid-template-columns: 1fr !important; gap: 40px !important; }
+    }
+  </style>
+</Layout>

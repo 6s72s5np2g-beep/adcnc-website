@@ -9,7 +9,14 @@ export default defineConfig({
   build: { format: 'file' },
   integrations: [
     sitemap({
-      i18n: { defaultLocale: 'zh-TW', locales: { 'zh-TW': 'zh-TW' } },
+      i18n: {
+        defaultLocale: 'zh-TW',
+        locales: {
+          'zh-TW': 'zh-TW',
+          en: 'en',
+          ja: 'ja',
+        },
+      },
     }),
   ],
 });

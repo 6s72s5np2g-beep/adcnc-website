@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const works = [
+  { category: 'サバゲー・タクティカル部品', material: '6061-T6 アルミ合金', desc: 'タクティカルハンドガード (M-LOK)', photo: '/images/airsoft-handguard.png', photoAlt: 'サバゲー用タクティカルハンドガード — 6061-T6 アルミ CNC加工' },
+  { category: '機械部品', material: '鋳鉄 FCD250', desc: '減速機ハウジング加工' },
+  { category: '機械部品', material: 'SCM440', desc: '精密シャフト部品' },
+  { category: '自動車部品', material: 'A356 鋳アルミ', desc: 'エンジンボディ加工' },
+  { category: '自動車部品', material: 'S45C', desc: 'ドライブシャフト' },
+  { category: 'ファクトリーオートメーション', material: 'A6061 アルミ', desc: 'ロボットアーム構造部品' },
+  { category: 'ファクトリーオートメーション', material: 'SUS304 ステンレス', desc: 'コンベアラインパーツ' },
+  { category: '精密治具', material: 'SKD11 工具鋼', desc: '検査治具' },
+  { category: '精密治具', material: 'A7075 アルミ', desc: '組立治具' },
+  { category: '半導体', material: 'SUS316 ステンレス', desc: '真空チャンバー部品' },
+  { category: '一般機械', material: 'S20C 炭素鋼', desc: 'フランジ・ベース' },
+];
+---
+
+<Layout
+  title="実績｜CNC加工対応業界とお客様事例｜銨東株式会社"
+  description="銨東株式会社の対応業界：機械、自動車、ファクトリーオートメーション、精密治具、半導体など。お客様とのNDA契約に基づき代表的な加工品種のみを掲載しています。具体的なお取引事例はお問い合わせください。"
+  active="works"
+  lang="ja"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/ja">ホーム</a> / 実績</div>
+      <h1>実績</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">多様な業界に対応し、数百種類の図番加工実績を積み重ねております</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">加工品例</h2>
+      <p class="section-sub">業界別の代表的加工品。具体的なお取引事例はお気軽にお問い合わせください</p>
+
+      <div class="grid-4">
+        {works.map(w => (
+          <div class="spec-card">
+            <div class="spec-img" style="aspect-ratio: 1/1; overflow: hidden; padding: 0;">
+              {w.photo ? (
+                <img src={w.photo} alt={w.photoAlt} loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              ) : (
+                <span>📷 加工品写真</span>
+              )}
+            </div>
+            <div style="padding: 16px;">
+              <div style="font-size: 12px; color: var(--primary); font-weight: 700; margin-bottom: 4px;">{w.category}</div>
+              <div style="font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 4px;">{w.desc}</div>
+              <div style="font-size: 13px; color: var(--gray-600);">{w.material}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p style="text-align: center; color: var(--gray-600); margin-top: 48px; font-size: 14px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+        ※ お客様とのNDA契約により、加工品種のみを掲載し、お客様名や具体的な図面は公開しておりません。<br />
+        ご検討の際は、業界別の参考事例についてお気軽にお問い合わせください。
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">対応業界</h2>
+      <div class="grid-4">
+        <div class="card"><div class="card-icon">🏭</div><h3>機械製造</h3><p>減速機、ギアボックス、伝動部品</p></div>
+        <div class="card"><div class="card-icon">🚗</div><h3>自動車</h3><p>エンジン部品、伝動部品、シャシー部品</p></div>
+        <div class="card"><div class="card-icon">🤖</div><h3>ファクトリーオートメーション</h3><p>ロボットアーム、コンベア、治具類</p></div>
+        <div class="card"><div class="card-icon">⚗️</div><h3>半導体</h3><p>真空チャンバー、ウエハ治具</p></div>
+        <div class="card"><div class="card-icon">🔬</div><h3>精密治具</h3><p>検査治具、組立治具</p></div>
+        <div class="card"><div class="card-icon">⚙️</div><h3>一般機械</h3><p>フランジ、ベース、シャフト類</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>これらの業界でのお取引をご検討ですか？</h2>
+      <p>図面をお送りいただければ、最速でお見積もりをご回答いたします</p>
+      <a href="/ja/contact" class="btn btn-primary btn-lg">お見積もり依頼</a>
+    </div>
+  </section>
+</Layout>
