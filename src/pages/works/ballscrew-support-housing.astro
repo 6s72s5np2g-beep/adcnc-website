@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const specs = [
+  { label: '產品類型', value: '滾珠螺桿支撐座（浮動端，32mm 級滾珠螺桿用）' },
+  { label: '材質', value: '鑄鐵（客戶供料鑄件，黑色塗裝）' },
+  { label: '加工方式', value: 'CNC 四軸銑床，兩道工程（正反面基準轉換）' },
+  { label: '關鍵特徵', value: '軸承孔精密搪孔：G7 級孔徑公差、表面粗糙度 Ra0.8、孔底清角 R≤0.5' },
+  { label: '幾何公差', value: '平行度、垂直度、平面度管控' },
+  { label: '品質檢驗', value: '三次元量床（CMM）全尺寸檢驗' },
+  { label: '應用領域', value: '工具機、自動化設備線性傳動' },
+];
+---
+
+<Layout
+  title="滾珠螺桿支撐座 CNC 銑削搪孔加工案例｜鑄鐵精密加工｜銨東股份有限公司"
+  description="鑄鐵滾珠螺桿支撐座（浮動端）CNC 四軸銑床加工案例：軸承孔 G7 級精密搪孔 Ra0.8、平行度／垂直度／平面度幾何公差管控、三次元（CMM）全尺寸檢驗。台中太平 CNC 加工廠銨東。"
+  keywords="滾珠螺桿支撐座加工,鑄鐵銑削,精密搪孔,G7孔公差,軸承孔加工,幾何公差,三次元檢驗,CMM檢驗,四軸銑床加工,CNC銑床加工,台中CNC,鑄件加工"
+  active="works"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">首頁</a> ／ <a href="/works">實績案例</a> ／ 滾珠螺桿支撐座</div>
+      <h1>滾珠螺桿支撐座 CNC 銑削搪孔加工</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">G7 級精密搪孔・幾何公差管控・三次元全尺寸檢驗</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/ballscrew-support-housing.jpg"
+            alt="滾珠螺桿支撐座 CNC 銑削加工 — 鑄鐵軸承孔精密搪孔完成品"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">搪孔完成品：軸承孔內壁精搪面與底座安裝面，鑄件外觀保留原塗裝</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">加工規格</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">加工重點</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>軸承孔精密搪孔</h3>
+          <p>精搪刀片磨耗以孔內表面粗糙度與孔底清角狀態即時監控，超差立即換刀，確保批量品質一致。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📐</div>
+          <h3>兩道工程基準轉換</h3>
+          <p>正反面兩道工程的基準轉換管控，確保孔軸線與安裝底面之間的平行度、垂直度要求。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔬</div>
+          <h3>三次元全尺寸檢驗</h3>
+          <p>以三次元量床（CMM）執行全尺寸檢驗，幾何公差全數合格才放行出貨。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>有類似的鑄件、機構件加工需求？</h2>
+      <p>歡迎傳圖面評估，我們會以最快速度回覆估價</p>
+      <a href="/contact" class="btn btn-primary btn-lg">立即詢價</a>
+      <p style="margin-top: 16px;"><a href="/works" style="color: rgba(255,255,255,0.8);">← 回實績案例</a></p>
+    </div>
+  </section>
+</Layout>

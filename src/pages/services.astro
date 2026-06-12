@@ -19,6 +19,8 @@ const services = [
     items: ['一次裝夾完成多面加工', '多角度斜孔、傾斜面銑削', '減少裝夾與夾治具成本', '提升尺寸一致性'],
     materials: '鋁合金、鈦合金、不鏽鋼、工具鋼、結構鋼',
     icon: '🔧',
+    photo: '/images/machine-5-axis.png',
+    photoAlt: '五軸加工中心 — 主軸與工作台',
   },
   {
     id: 'mill-3-4',
@@ -28,6 +30,8 @@ const services = [
     items: ['模具、夾治具、結構件', '法蘭、底板、固定座', '凸輪、分度盤等迴轉件（4 軸）', '量產零件量產試作皆可'],
     materials: '鋁合金、鋼材、鑄鐵、不鏽鋼、塑膠工程料',
     icon: '📐',
+    photo: '/images/machine-4-axis-bridge.png',
+    photoAlt: '四軸橋式銑床加工 — 旋轉軸與夾具特寫',
   },
   {
     id: 'turning',
@@ -98,8 +102,12 @@ const services = [
               <p style="color: var(--gray-700, #334155);">{s.materials}</p>
               <a href="/contact" class="btn btn-blue" style="margin-top: 24px;">針對 {s.title} 詢價</a>
             </div>
-            <div style="aspect-ratio: 4/3; background: var(--gray-100); border-radius: 12px; display: grid; place-items: center; color: var(--gray-400);">
-              <span>📷 {s.title}加工照片</span>
+            <div style="aspect-ratio: 4/3; background: var(--gray-100); border-radius: 12px; overflow: hidden; display: grid; place-items: center; color: var(--gray-400);">
+              {s.photo ? (
+                <img src={s.photo} alt={s.photoAlt} loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              ) : (
+                <span>📷 {s.title}加工照片</span>
+              )}
             </div>
           </div>
         </article>

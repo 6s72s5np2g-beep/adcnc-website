@@ -1,0 +1,88 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const specs = [
+  { label: 'Part Type', value: 'Ball screw support housing (floating end, for 32mm-class ball screws)' },
+  { label: 'Material', value: 'Cast iron (customer-supplied casting, black coated)' },
+  { label: 'Process', value: 'CNC 4-axis milling, two operations (front/back datum transfer)' },
+  { label: 'Key Feature', value: 'Precision bored bearing seat: G7-class bore tolerance, Ra0.8 surface finish, sharp bore-bottom corner R≤0.5' },
+  { label: 'GD&T', value: 'Parallelism, perpendicularity, and flatness controlled' },
+  { label: 'Inspection', value: 'Full-dimension CMM inspection' },
+  { label: 'Application', value: 'Machine tools, factory automation linear motion' },
+];
+---
+
+<Layout
+  title="Ball Screw Support Housing CNC Milling & Boring Case Study | Cast Iron Precision Machining | AnDong Co., Ltd."
+  description="CNC 4-axis milling case study: cast iron ball screw support housing (floating end) with precision-bored bearing seat (G7 bore tolerance, Ra0.8), parallelism/perpendicularity/flatness control, and full-dimension CMM inspection. Precision CNC machining in Taichung, Taiwan."
+  keywords="ball screw support housing machining,cast iron milling,precision boring,G7 bore tolerance,bearing bore machining,GD&T machining,CMM inspection,4-axis CNC milling,CNC milling Taiwan,Taichung CNC"
+  active="works"
+  lang="en"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en">Home</a> / <a href="/en/works">Industries</a> / Ball Screw Support Housing</div>
+      <h1>Ball Screw Support Housing — CNC Milling & Boring</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">G7 precision boring · GD&T control · full CMM inspection</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/ballscrew-support-housing.jpg"
+            alt="Ball screw support housing CNC milling — cast iron part with precision-bored bearing seat"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">Finished part: precision-bored bearing seat and machined mounting faces, with as-cast coated exterior</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">Specifications</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Machining Highlights</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Precision Boring</h3>
+          <p>Boring insert wear is monitored in real time via bore surface finish and bottom-corner condition; inserts are replaced immediately when out of spec, keeping batch quality consistent.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📐</div>
+          <h3>Two-Operation Datum Transfer</h3>
+          <p>Datum transfer between front and back operations is tightly controlled to hold parallelism and perpendicularity between the bore axis and mounting face.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔬</div>
+          <h3>Full CMM Inspection</h3>
+          <p>Every dimension is verified on a coordinate measuring machine (CMM); parts ship only after all GD&T requirements pass.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Have a similar casting or structural part project?</h2>
+      <p>Send us your drawing — we'll respond with a quote as fast as possible</p>
+      <a href="/en/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+      <p style="margin-top: 16px;"><a href="/en/works" style="color: rgba(255,255,255,0.8);">← Back to Industries</a></p>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,88 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const specs = [
+  { label: '製品タイプ', value: '単気筒エアコンプレッサー用ポリVプーリー' },
+  { label: '材質', value: 'EN-GJL-200 ねずみ鋳鉄（FC200 相当）' },
+  { label: 'サイズ／重量', value: '外径 Ø186.5 mm／約 2.8 kg' },
+  { label: '溝形状', value: 'PK マルチリブ溝（ISO 9982 準拠）' },
+  { label: '加工方法', value: 'CNC 旋盤加工' },
+  { label: '素材形態', value: '客先支給鋳物（カチオン電着塗装）' },
+  { label: '用途', value: '農業機械、エアコンプレッサー' },
+];
+---
+
+<Layout
+  title="鋳鉄ポリVプーリー CNC旋盤加工事例｜ねずみ鋳鉄 EN-GJL-200｜銨東株式会社"
+  description="ねずみ鋳鉄 EN-GJL-200 ポリVプーリーのCNC旋盤加工事例：Ø186.5mm PKマルチリブ溝（ISO 9982）総形旋削、客先支給鋳物の加工。台湾・台中の精密CNC加工メーカー銨東。"
+  keywords="鋳鉄プーリー加工,ポリVプーリー,マルチリブプーリー,ねずみ鋳鉄旋削,FC200加工,鋳物加工,CNC旋盤,台湾CNC加工,台中CNC"
+  active="works"
+  lang="ja"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/ja">ホーム</a> / <a href="/ja/works">実績</a> / 鋳鉄ポリVプーリー</div>
+      <h1>鋳鉄ポリVプーリー CNC旋盤加工</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">ねずみ鋳鉄 EN-GJL-200・PKマルチリブ溝の総形旋削・客先支給鋳物</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/cast-iron-pulley.jpg"
+            alt="鋳鉄ポリVプーリー CNC旋盤加工 — ねずみ鋳鉄 EN-GJL-200 マルチリブプーリー仕上げ品"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">旋削仕上げ品：外周PK溝と内径仕上げ面、スポーク部は鋳肌塗装のまま</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">加工仕様</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">加工のポイント</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🔩</div>
+          <h3>マルチリブ溝の総形旋削</h3>
+          <p>PK溝は総形バイトで旋削し、溝形状とピッチを ISO 9982 プーリー規格に基づき管理。ベルトの密着性と伝動効率を確保します。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>鋳物基準面の芯出し</h3>
+          <p>客先支給鋳物は鋳造基準面でチャッキング・芯出しを行い、加工面と鋳肌面の同心度を管理して肉厚偏差を防ぎます。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛠️</div>
+          <h3>鋳鉄切削の管理</h3>
+          <p>ねずみ鋳鉄の断続切削における工具摩耗管理と切粉処理により、量産ロットでも寸法を安定させます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>類似の鋳物・プーリー加工のご依頼は</h2>
+      <p>図面をお送りいただければ、最速でお見積もりをご回答いたします</p>
+      <a href="/ja/contact" class="btn btn-primary btn-lg">お見積もり依頼</a>
+      <p style="margin-top: 16px;"><a href="/ja/works" style="color: rgba(255,255,255,0.8);">← 実績一覧へ戻る</a></p>
+    </div>
+  </section>
+</Layout>

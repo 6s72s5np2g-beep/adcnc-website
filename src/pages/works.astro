@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 
 const works = [
+  { category: '機械零件', material: '灰鑄鐵 EN-GJL-200', desc: '多楔皮帶輪車削加工', photo: '/images/works/cast-iron-pulley.jpg', photoAlt: '鑄鐵多楔皮帶輪 CNC 車削加工 — 灰鑄鐵 EN-GJL-200', href: '/works/cast-iron-pulley' },
+  { category: '機械零件', material: '鑄鐵', desc: '滾珠螺桿支撐座銑削搪孔', photo: '/images/works/ballscrew-support-housing.jpg', photoAlt: '滾珠螺桿支撐座 CNC 銑削搪孔加工 — 鑄鐵', href: '/works/ballscrew-support-housing' },
+  { category: '生存遊戲零件', material: '6061-T6 鋁合金', desc: '戰術護木 (M-LOK)', photo: '/images/airsoft-handguard.png', photoAlt: '戰術護木零件 — 6061-T6 鋁合金 CNC 加工' },
   { category: '機械零件', material: '鑄鐵 FCD250', desc: '減速機殼體加工' },
   { category: '機械零件', material: 'SCM440', desc: '精密軸類零件' },
   { category: '汽車零件', material: 'A356 鑄鋁', desc: '引擎本體加工' },
@@ -36,16 +39,28 @@ const categories = ['全部', ...new Set(works.map(w => w.category))];
       <p class="section-sub">依產業類別精選代表作，實際合作案例請來電洽詢</p>
 
       <div class="grid-4">
-        {works.map(w => (
-          <div class="spec-card">
-            <div class="spec-img" style="aspect-ratio: 1/1;">📷 加工件照</div>
-            <div style="padding: 16px;">
-              <div style="font-size: 12px; color: var(--primary); font-weight: 700; margin-bottom: 4px;">{w.category}</div>
-              <div style="font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 4px;">{w.desc}</div>
-              <div style="font-size: 13px; color: var(--gray-600);">{w.material}</div>
-            </div>
-          </div>
-        ))}
+        {works.map(w => {
+          const card = (
+            <>
+              <div class="spec-img" style="aspect-ratio: 1/1; overflow: hidden; padding: 0;">
+                {w.photo ? (
+                  <img src={w.photo} alt={w.photoAlt} loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                ) : (
+                  <span>📷 加工件照</span>
+                )}
+              </div>
+              <div style="padding: 16px;">
+                <div style="font-size: 12px; color: var(--primary); font-weight: 700; margin-bottom: 4px;">{w.category}</div>
+                <div style="font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 4px;">{w.desc}</div>
+                <div style="font-size: 13px; color: var(--gray-600);">{w.material}</div>
+                {w.href && <div style="font-size: 13px; color: var(--primary); font-weight: 600; margin-top: 8px;">查看案例 →</div>}
+              </div>
+            </>
+          );
+          return w.href
+            ? <a href={w.href} class="spec-card" style="display: block; text-decoration: none;">{card}</a>
+            : <div class="spec-card">{card}</div>;
+        })}
       </div>
 
       <p style="text-align: center; color: var(--gray-600); margin-top: 48px; font-size: 14px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8;">

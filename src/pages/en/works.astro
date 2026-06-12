@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 
 const works = [
+  { category: 'Machinery', material: 'EN-GJL-200 Grey Cast Iron', desc: 'Poly-V pulley CNC turning', photo: '/images/works/cast-iron-pulley.jpg', photoAlt: 'Cast iron Poly-V pulley CNC turning — EN-GJL-200 grey iron', href: '/en/works/cast-iron-pulley' },
+  { category: 'Machinery', material: 'Cast Iron', desc: 'Ball screw support housing milling & boring', photo: '/images/works/ballscrew-support-housing.jpg', photoAlt: 'Ball screw support housing CNC milling and boring — cast iron', href: '/en/works/ballscrew-support-housing' },
   { category: 'Airsoft / Tactical Gear', material: '6061-T6 Aluminum Alloy', desc: 'Tactical handguard (M-LOK)', photo: '/images/airsoft-handguard.png', photoAlt: 'Airsoft tactical handguard — 6061-T6 aluminum CNC machined' },
   { category: 'Machinery', material: 'Ductile Iron FCD250', desc: 'Reduction gear housing' },
   { category: 'Machinery', material: 'SCM440', desc: 'Precision shaft' },
@@ -36,22 +38,28 @@ const works = [
       <p class="section-sub">Selected representative parts by industry. Contact us for relevant case studies.</p>
 
       <div class="grid-4">
-        {works.map(w => (
-          <div class="spec-card">
-            <div class="spec-img" style="aspect-ratio: 1/1; overflow: hidden; padding: 0;">
-              {w.photo ? (
-                <img src={w.photo} alt={w.photoAlt} loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-              ) : (
-                <span>📷 Part Photo</span>
-              )}
-            </div>
-            <div style="padding: 16px;">
-              <div style="font-size: 12px; color: var(--primary); font-weight: 700; margin-bottom: 4px;">{w.category}</div>
-              <div style="font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 4px;">{w.desc}</div>
-              <div style="font-size: 13px; color: var(--gray-600);">{w.material}</div>
-            </div>
-          </div>
-        ))}
+        {works.map(w => {
+          const card = (
+            <>
+              <div class="spec-img" style="aspect-ratio: 1/1; overflow: hidden; padding: 0;">
+                {w.photo ? (
+                  <img src={w.photo} alt={w.photoAlt} loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                ) : (
+                  <span>📷 Part Photo</span>
+                )}
+              </div>
+              <div style="padding: 16px;">
+                <div style="font-size: 12px; color: var(--primary); font-weight: 700; margin-bottom: 4px;">{w.category}</div>
+                <div style="font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 4px;">{w.desc}</div>
+                <div style="font-size: 13px; color: var(--gray-600);">{w.material}</div>
+                {w.href && <div style="font-size: 13px; color: var(--primary); font-weight: 600; margin-top: 8px;">View case study →</div>}
+              </div>
+            </>
+          );
+          return w.href
+            ? <a href={w.href} class="spec-card" style="display: block; text-decoration: none;">{card}</a>
+            : <div class="spec-card">{card}</div>;
+        })}
       </div>
 
       <p style="text-align: center; color: var(--gray-600); margin-top: 48px; font-size: 14px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8;">

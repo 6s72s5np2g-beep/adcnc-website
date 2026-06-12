@@ -1,0 +1,88 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const specs = [
+  { label: '製品タイプ', value: 'ボールねじサポートユニット（支持側／32mm級ボールねじ用）' },
+  { label: '材質', value: '鋳鉄（客先支給鋳物、黒色塗装）' },
+  { label: '加工方法', value: 'CNC 4軸フライス、2工程（表裏基準替え）' },
+  { label: '重要特性', value: 'ベアリング穴の精密中ぐり：G7級穴公差、面粗さ Ra0.8、穴底ピン角 R≤0.5' },
+  { label: '幾何公差', value: '平行度・直角度・平面度を管理' },
+  { label: '品質検査', value: '三次元測定機（CMM）による全寸法検査' },
+  { label: '用途', value: '工作機械、FA設備のリニア伝動部' },
+];
+---
+
+<Layout
+  title="ボールねじサポートユニット CNCフライス・中ぐり加工事例｜鋳鉄精密加工｜銨東株式会社"
+  description="鋳鉄ボールねじサポートユニット（支持側）のCNC 4軸フライス加工事例：ベアリング穴のG7級精密中ぐり（Ra0.8）、平行度・直角度・平面度の幾何公差管理、三次元測定機による全寸法検査。台湾・台中の精密CNC加工メーカー銨東。"
+  keywords="ボールねじサポート加工,鋳鉄フライス加工,精密中ぐり,G7穴公差,ベアリング穴加工,幾何公差,三次元測定,CMM検査,4軸フライス加工,CNCフライス,台湾CNC加工,台中CNC"
+  active="works"
+  lang="ja"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/ja">ホーム</a> / <a href="/ja/works">実績</a> / ボールねじサポートユニット</div>
+      <h1>ボールねじサポートユニット CNCフライス・中ぐり加工</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">G7級精密中ぐり・幾何公差管理・三次元全寸法検査</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/ballscrew-support-housing.jpg"
+            alt="ボールねじサポートユニット CNCフライス加工 — 鋳鉄ベアリング穴精密中ぐり仕上げ品"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">仕上げ品：ベアリング穴の精密中ぐり面と取付基準面、外観は鋳肌塗装のまま</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">加工仕様</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">加工のポイント</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>ベアリング穴の精密中ぐり</h3>
+          <p>中ぐりチップの摩耗は穴内面の面粗さと穴底ピン角の状態でリアルタイムに監視。規格外になり次第すぐ交換し、ロット内の品質を一定に保ちます。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📐</div>
+          <h3>2工程の基準替え管理</h3>
+          <p>表裏2工程間の基準替えを厳密に管理し、穴軸線と取付底面の平行度・直角度を保証します。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔬</div>
+          <h3>三次元全寸法検査</h3>
+          <p>三次元測定機（CMM）で全寸法を検証し、幾何公差がすべて合格してから出荷します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>類似の鋳物・構造部品加工のご依頼は</h2>
+      <p>図面をお送りいただければ、最速でお見積もりをご回答いたします</p>
+      <a href="/ja/contact" class="btn btn-primary btn-lg">お見積もり依頼</a>
+      <p style="margin-top: 16px;"><a href="/ja/works" style="color: rgba(255,255,255,0.8);">← 実績一覧へ戻る</a></p>
+    </div>
+  </section>
+</Layout>

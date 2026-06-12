@@ -55,6 +55,13 @@ img { max-width: 100%; display: block; }
   background-image: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.08), transparent 40%),
                     radial-gradient(circle at 80% 20%, rgba(245,158,11,0.12), transparent 40%);
 }
+/* Hero with photo background */
+.hero.hero-photo {
+  background:
+    linear-gradient(135deg, rgba(0,21,90,0.78) 0%, rgba(0,58,140,0.62) 60%, rgba(0,109,247,0.55) 100%),
+    url('/images/factory-overview.png') center/cover no-repeat;
+}
+.hero.hero-photo::before { display: none; }
 .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
 .hero h1 { font-size: clamp(36px, 5vw, 60px); font-weight: 800; margin-bottom: 24px; letter-spacing: 1px; }
 .hero-sub { font-size: clamp(16px, 1.5vw, 20px); color: rgba(255,255,255,0.92); margin-bottom: 36px; max-width: 700px; }

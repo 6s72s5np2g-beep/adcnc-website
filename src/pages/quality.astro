@@ -46,14 +46,25 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <h2>檢驗設備</h2>
-      <ul class="list">
-        <li>三次元量測儀（CMM）— 精密複雜尺寸量測</li>
-        <li>投影機 — 輪廓、孔位、角度量測</li>
-        <li>2.5 次元影像量測儀 — 平面尺寸快速量測</li>
-        <li>表面粗糙度儀 — Ra / Rz 表面光潔度檢測</li>
-        <li>數位卡尺、外徑分厘卡、深度規 — 基礎尺寸快速量測</li>
-        <li>塞規、環規、針規 — 孔徑、軸徑公差檢驗</li>
-      </ul>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: start; margin-top: 16px;" class="quality-equip-row">
+        <ul class="list">
+          <li><strong>三次元量測儀（CMM）</strong>— 精密複雜尺寸量測</li>
+          <li>投影機 — 輪廓、孔位、角度量測</li>
+          <li>2.5 次元影像量測儀 — 平面尺寸快速量測</li>
+          <li>表面粗糙度儀 — Ra / Rz 表面光潔度檢測</li>
+          <li>數位卡尺、外徑分厘卡、深度規 — 基礎尺寸快速量測</li>
+          <li>塞規、環規、針規 — 孔徑、軸徑公差檢驗</li>
+        </ul>
+        <figure style="margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200);">
+          <img src="/images/cmm-inspection.png" alt="銨東三次元量測儀 (CMM) 進行精密工件檢驗" loading="lazy" style="width: 100%; height: auto; display: block;" />
+          <figcaption style="padding: 10px 14px; font-size: 13px; color: var(--gray-600); background: var(--gray-100);">三次元量測儀進行精密尺寸檢驗</figcaption>
+        </figure>
+      </div>
+      <style>
+        @media (max-width: 768px) {
+          .quality-equip-row { grid-template-columns: 1fr !important; }
+        }
+      </style>
 
       <h2>機聯網即時追蹤</h2>
       <p>銨東自主開發生產管理系統並整合機聯網即時監控，每一張訂單的加工進度、機台運轉、班別產量皆即時記錄，發生品質問題可追溯至加工時間與機台，形成完整的品質履歷。</p>
