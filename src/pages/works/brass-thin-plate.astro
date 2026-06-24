@@ -1,0 +1,86 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const specs = [
+  { label: '產品類型', value: '黃銅精密多孔薄板（載板）' },
+  { label: '材質', value: '黃銅（Brass）' },
+  { label: '板厚', value: '總厚 1.6 mm' },
+  { label: '加工精度', value: '各孔位公差 ±0.02 mm、平面度 0.02 mm' },
+  { label: '加工方式', value: 'CNC 銑削（自製真空吸盤治具吸附）' },
+  { label: '應用領域', value: '電子產業精密載板' },
+];
+---
+
+<Layout
+  title="黃銅超薄板 CNC 銑削加工案例｜1.6mm 薄板平面度0.02mm｜銨東股份有限公司"
+  description="1.6mm 黃銅超薄板 CNC 銑削加工案例：自製真空吸盤治具吸附加工克服薄件變形，達成平面度 0.02mm、各孔位公差 ±0.02mm。應用於電子精密載板。台中太平 CNC 銅件加工廠銨東。"
+  keywords="黃銅薄板加工,薄板加工,真空吸盤治具,平面度加工,銅件加工,黃銅銑削,精密載板,孔位公差,台中CNC,薄件變形"
+  active="works"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">首頁</a> ／ <a href="/works">實績案例</a> ／ 黃銅超薄板</div>
+      <h1>黃銅超薄板 CNC 銑削加工</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">1.6mm 黃銅薄板・平面度 0.02mm・自製真空吸盤加工</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/brass-thin-plate.jpg"
+            alt="黃銅精密多孔薄板 CNC 銑削加工 — 總厚1.6mm、平面度0.02mm、真空吸盤吸附加工"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">總厚僅 1.6mm 的多孔薄板，以自製真空吸盤吸附加工確保全平面平面度</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">加工規格</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">加工重點</h2>
+      <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🧲</div>
+          <h3>自製真空吸盤治具</h3>
+          <p>厚度僅 1.6mm 的薄板剛性極低，傳統夾持會因應力導致翹曲，根本壓不到要求的平面度。本案自行設計真空吸盤治具，以均勻負壓吸附工件，徹底消除夾持變形，是達成平面度的關鍵。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📐</div>
+          <h3>平面度 0.02mm</h3>
+          <p>在 1.6mm 薄板狀態下，將全平面平面度控制於 0.02mm，滿足電子載板的貼合與裝配要求。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>全孔位 ±0.02mm</h3>
+          <p>多孔位置度一次銑削到位，孔位公差全數收斂於 ±0.02mm，確保載板上各孔對位準確。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>有薄板、易變形件或高平面度加工需求？</h2>
+      <p>歡迎傳圖面評估，我們會以最快速度回覆估價</p>
+      <a href="/contact" class="btn btn-primary btn-lg">立即詢價</a>
+      <p style="margin-top: 16px;"><a href="/works" style="color: rgba(255,255,255,0.8);">← 回實績案例</a></p>
+    </div>
+  </section>
+</Layout>

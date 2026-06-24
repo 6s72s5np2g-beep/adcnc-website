@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const specs = [
+  { label: '產品類型', value: '油封座（Rod Seal Gland，工具機用）' },
+  { label: '材質', value: '碳鋼 1018' },
+  { label: '加工精度', value: '內外徑公差 ±0.002 吋（±0.05mm）、同軸度 0.001 吋' },
+  { label: '表面粗糙度', value: '密封面 Ra 32 µin（約 Ra 0.8 µm）' },
+  { label: '加工方式', value: 'CNC 車削（內外徑多道密封溝槽）＋ 鑽孔' },
+  { label: '表面處理', value: '防鏽油' },
+  { label: '應用領域', value: '美商工具機大廠・臥式綜合加工機' },
+];
+---
+
+<Layout
+  title="工具機油封座 CNC 車削加工案例｜碳鋼內外徑切槽 Ra32｜銨東股份有限公司"
+  description="碳鋼油封座（Rod Seal Gland）CNC 車削加工案例：內外徑多道密封溝槽、密封面 Ra32µin 高光潔、直徑公差±0.002吋、同軸度0.001吋。供應美商工具機大廠臥式加工中心。台中太平 CNC 加工廠銨東。"
+  keywords="油封座加工,工具機零件加工,內外徑切槽,密封溝槽,碳鋼車削,1018加工,Ra32,同軸度,CNC車削,台中CNC"
+  active="works"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">首頁</a> ／ <a href="/works">實績案例</a> ／ 工具機油封座</div>
+      <h1>工具機油封座 CNC 車削加工</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">碳鋼・內外徑密封溝槽・Ra32 µin 高光潔</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/machine-tool-seal-gland.jpg"
+            alt="工具機油封座 CNC 車削加工 — 碳鋼內外徑密封溝槽、Ra32高光潔"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">內外徑多道密封溝槽車削，密封面 Ra32µin 確保油封貼合</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">加工規格</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">加工重點</h2>
+      <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <h3>內外徑密封溝槽</h3>
+          <p>內、外徑多道密封溝槽以 CNC 車削成形，槽形與位置精度直接影響油封貼合與密封性。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3>Ra32 高光潔面</h3>
+          <p>密封面要求 Ra32µin（約 0.8µm），以精車兼顧光潔度與尺寸，確保動態密封壽命。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>同軸度 0.001 吋</h3>
+          <p>內外徑與基準面同軸度控制在 0.001 吋，維持迴轉密封的均勻間隙。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>有油封座、密封件或高光潔車削需求？</h2>
+      <p>歡迎傳圖面評估，我們會以最快速度回覆估價</p>
+      <a href="/contact" class="btn btn-primary btn-lg">立即詢價</a>
+      <p style="margin-top: 16px;"><a href="/works" style="color: rgba(255,255,255,0.8);">← 回實績案例</a></p>
+    </div>
+  </section>
+</Layout>

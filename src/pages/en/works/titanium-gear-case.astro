@@ -1,0 +1,89 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const specs = [
+  { label: 'Part Type', value: 'Gear case (for pneumatic tools)' },
+  { label: 'Material', value: 'Titanium Grade 2 (commercially pure)' },
+  { label: 'Key Dimensions', value: 'OD Ø33 · hex across-flats 19.65 · length 41–54mm (two versions)' },
+  { label: 'Threads', value: 'External 1"-14 · internal M28×P1.0 (min bore Ø27.05)' },
+  { label: 'Accuracy', value: 'Bore Ø24.02 +0/−0.02 · burr-free' },
+  { label: 'Process', value: 'CNC turning → thread cutting → 2-face milling' },
+  { label: 'Finish', value: 'Bead blasting (alumina)' },
+  { label: 'Application', value: 'International pneumatic-tool brand · air wrench gear case' },
+];
+---
+
+<Layout
+  title="Titanium Gear Case CNC Turn-Mill Case Study | Ti Gr.2 Dual-Thread Pneumatic Tool Part | AnDong Co., Ltd."
+  description="CNC turn-mill case study: titanium Grade 2 gear case with external 1-14 and internal M28x1.0 dual threads, hex wrench flats, bead-blast finish, burr-free. Supplied to an international pneumatic-tool brand. Titanium machining in Taichung, Taiwan."
+  keywords="titanium machining,titanium Grade 2,pure titanium,gear case,pneumatic tool parts,turn-mill machining,titanium turning,internal external thread,Taichung CNC,hard-to-machine"
+  active="works"
+  lang="en"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en">Home</a> / <a href="/en/works">Industries</a> / Titanium Gear Case</div>
+      <h1>Titanium Gear Case — CNC Turn-Mill</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">Titanium Gr.2 · dual threads · hex flats · bead-blast finish</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/titanium-gear-case.jpg"
+            alt="Titanium gear case CNC turn-mill — Ti Gr.2, dual threads, pneumatic tool part"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">Titanium Gr.2 gear case with internal and external threads and hex flats, turned and milled in process</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">Specifications</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Machining Highlights</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">💪</div>
+          <h3>Titanium Gr.2 Cutting</h3>
+          <p>Pure titanium has poor heat conduction, galls easily and springs back; low speed, high feed and dedicated tooling control tool temperature and dimensions — far harder than steel.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔩</div>
+          <h3>Internal &amp; External Threads</h3>
+          <p>External 1"-14 and internal M28×P1.0 threads are formed on one part, with thread form and fit achieved in process.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⬡</div>
+          <h3>Hex Flats + Lightweight</h3>
+          <p>Hex wrench flats are milled; titanium combines high strength with light weight, ideal for premium pneumatic tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Need titanium, titanium-alloy or hard-to-machine work?</h2>
+      <p>Send us your drawing — we'll respond with a quote as fast as possible</p>
+      <a href="/en/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+      <p style="margin-top: 16px;"><a href="/en/works" style="color: rgba(255,255,255,0.8);">← Back to Industries</a></p>
+    </div>
+  </section>
+</Layout>

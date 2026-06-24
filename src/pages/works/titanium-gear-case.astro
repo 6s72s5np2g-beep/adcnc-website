@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const specs = [
+  { label: '產品類型', value: '齒輪箱殼（Gear Case，氣動工具用）' },
+  { label: '材質', value: '純鈦 Gr.2（Titanium Grade 2）' },
+  { label: '主要尺寸', value: '外徑 Ø33・外六角對邊 19.65・總長 41～54mm（長短兩版）' },
+  { label: '螺紋', value: '外牙 1"-14・內牙 M28×P1.0（最小內徑 Ø27.05）' },
+  { label: '加工精度', value: '內徑 Ø24.02 +0/−0.02・嚴禁毛邊' },
+  { label: '加工方式', value: 'CNC 車床加工 → 車牙 → 銑二面' },
+  { label: '表面處理', value: '噴砂（氧化鋁）' },
+  { label: '應用領域', value: '國際氣動工具品牌・氣動扳手齒輪箱' },
+];
+---
+
+<Layout
+  title="純鈦齒輪箱殼 CNC 車銑加工案例｜鈦Gr.2 雙向螺紋氣動工具件｜銨東股份有限公司"
+  description="純鈦 Gr.2 齒輪箱殼（Gear Case）CNC 車銑加工案例：外牙1&quot;-14＋內牙M28×1.0雙向螺紋、外六角扳手面、噴砂處理、嚴禁毛邊。供應國際氣動工具品牌。台中太平 CNC 純鈦加工廠銨東。"
+  keywords="純鈦加工,鈦合金加工,鈦Gr2,齒輪箱殼,氣動工具零件,車銑加工,鈦車削,內外螺紋,台中CNC,鈦件加工"
+  active="works"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">首頁</a> ／ <a href="/works">實績案例</a> ／ 純鈦齒輪箱殼</div>
+      <h1>純鈦齒輪箱殼 CNC 車銑加工</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">純鈦 Gr.2・雙向螺紋・外六角・噴砂處理</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/titanium-gear-case.jpg"
+            alt="純鈦齒輪箱殼 CNC 車銑加工 — 鈦Gr.2、雙向螺紋、氣動工具件"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">純鈦 Gr.2 齒輪箱殼，內外雙向螺紋與外六角一次車銑成形</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">加工規格</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">加工重點</h2>
+      <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">💪</div>
+          <h3>純鈦 Gr.2 切削</h3>
+          <p>純鈦導熱差、易黏刀、回彈大，以低速大進給與專用刀具控制刀溫與尺寸，難度遠高於鋼件。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔩</div>
+          <h3>內外雙向螺紋</h3>
+          <p>外牙 1"-14 與內牙 M28×P1.0 於同一件成形，牙形與配合度一次到位。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⬡</div>
+          <h3>外六角＋輕量化</h3>
+          <p>外六角扳手面銑削，純鈦兼顧高強度與輕量，適合高階氣動工具。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>有純鈦、鈦合金或難加工材需求？</h2>
+      <p>歡迎傳圖面評估，我們會以最快速度回覆估價</p>
+      <a href="/contact" class="btn btn-primary btn-lg">立即詢價</a>
+      <p style="margin-top: 16px;"><a href="/works" style="color: rgba(255,255,255,0.8);">← 回實績案例</a></p>
+    </div>
+  </section>
+</Layout>

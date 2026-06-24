@@ -1,0 +1,88 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const specs = [
+  { label: 'Part Type', value: 'Rod seal gland (for machine tools)' },
+  { label: 'Material', value: 'Carbon steel 1018' },
+  { label: 'Accuracy', value: 'ID/OD ±0.002 in (±0.05mm), concentricity 0.001 in' },
+  { label: 'Surface Finish', value: 'Sealing faces Ra 32 µin (~Ra 0.8 µm)' },
+  { label: 'Process', value: 'CNC turning (multiple ID/OD seal grooves) + drilling' },
+  { label: 'Treatment', value: 'Rust-inhibiting oil' },
+  { label: 'Application', value: 'US machine-tool OEM · horizontal machining centers' },
+];
+---
+
+<Layout
+  title="Machine-Tool Rod Seal Gland CNC Turning Case Study | Carbon Steel ID/OD Grooves Ra32 | AnDong Co., Ltd."
+  description="CNC turning case study: carbon steel rod seal gland with multiple ID/OD sealing grooves, Ra32µin sealing faces, ±0.002in diameter tolerance, 0.001in concentricity. Supplied to a US machine-tool OEM's horizontal machining centers. CNC machining in Taichung, Taiwan."
+  keywords="seal gland machining,machine tool parts,ID OD grooving,sealing grooves,carbon steel turning,1018 machining,Ra32 finish,concentricity,CNC turning Taiwan,Taichung CNC"
+  active="works"
+  lang="en"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en">Home</a> / <a href="/en/works">Industries</a> / Machine-Tool Seal Gland</div>
+      <h1>Machine-Tool Rod Seal Gland — CNC Turning</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">Carbon steel · ID/OD sealing grooves · Ra32 µin fine finish</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/machine-tool-seal-gland.jpg"
+            alt="Machine-tool rod seal gland CNC turning — carbon steel ID/OD sealing grooves, Ra32 finish"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">Multiple ID/OD sealing grooves turned; sealing faces at Ra32µin for reliable seal seating</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">Specifications</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Machining Highlights</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <h3>ID/OD Sealing Grooves</h3>
+          <p>Multiple sealing grooves on both bore and outer diameter are CNC-turned; groove form and position directly affect seal seating and sealing performance.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3>Ra32 Fine Finish</h3>
+          <p>Sealing faces require Ra32µin (~0.8µm); finish turning balances surface quality and dimension to ensure dynamic seal life.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Concentricity 0.001 in</h3>
+          <p>Concentricity between bore, OD and datum is held to 0.001in, maintaining uniform clearance for the rotary seal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Need seal glands, sealing parts or fine-finish turning?</h2>
+      <p>Send us your drawing — we'll respond with a quote as fast as possible</p>
+      <a href="/en/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+      <p style="margin-top: 16px;"><a href="/en/works" style="color: rgba(255,255,255,0.8);">← Back to Industries</a></p>
+    </div>
+  </section>
+</Layout>

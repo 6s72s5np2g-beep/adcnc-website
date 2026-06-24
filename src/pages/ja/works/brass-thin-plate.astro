@@ -1,0 +1,87 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const specs = [
+  { label: '製品タイプ', value: '黄銅精密多孔薄板（キャリアプレート）' },
+  { label: '材質', value: '黄銅（真鍮）' },
+  { label: '板厚', value: '全厚 1.6 mm' },
+  { label: '加工精度', value: '穴位置 ±0.02 mm、平面度 0.02 mm' },
+  { label: '加工方法', value: 'CNCフライス加工（自社製真空チャック治具）' },
+  { label: '用途', value: '電子産業の精密キャリアプレート' },
+];
+---
+
+<Layout
+  title="黄銅超薄板 CNCフライス加工事例｜1.6mm薄板 平面度0.02mm｜銨東株式会社"
+  description="1.6mm 黄銅超薄板のCNCフライス加工事例：自社製の真空チャック治具で薄物の変形を克服し、平面度0.02mm・穴位置±0.02mmを達成。電子精密キャリアプレートに対応。台湾・台中の黄銅加工メーカー銨東。"
+  keywords="黄銅薄板加工,薄板加工,真空チャック治具,平面度加工,銅合金加工,真鍮フライス,精密キャリアプレート,穴位置公差,台中CNC,薄物変形"
+  active="works"
+  lang="ja"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/ja">ホーム</a> / <a href="/ja/works">実績</a> / 黄銅超薄板</div>
+      <h1>黄銅超薄板 CNCフライス加工</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">1.6mm 黄銅薄板・平面度 0.02mm・自社製真空チャック加工</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/brass-thin-plate.jpg"
+            alt="黄銅精密多孔薄板 CNCフライス加工 — 全厚1.6mm、平面度0.02mm、真空チャック吸着加工"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">全厚わずか1.6mmの多孔薄板を、自社製真空チャックで吸着加工し全面平面度を確保</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">加工仕様</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">加工のポイント</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🧲</div>
+          <h3>自社製真空チャック治具</h3>
+          <p>厚さわずか1.6mmの薄板は剛性が極めて低く、従来のクランプでは応力で反ってしまい、要求平面度に届きません。均一な負圧で吸着する真空チャックを自社設計し、クランプ変形を排除——平面度達成の鍵です。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📐</div>
+          <h3>平面度 0.02mm</h3>
+          <p>1.6mmの薄板状態でも全面平面度を0.02mmに管理し、電子キャリアプレートの密着・組立要求を満たします。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>全穴位置 ±0.02mm</h3>
+          <p>複数の穴位置を一度の段取りでフライス加工し、全て±0.02mm以内に収め、プレート上の各穴を正確に位置決めします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>薄板・変形しやすい部品・高平面度加工をご検討ですか？</h2>
+      <p>図面をお送りいただければ、最速でお見積もりをご回答いたします</p>
+      <a href="/ja/contact" class="btn btn-primary btn-lg">お見積もり依頼</a>
+      <p style="margin-top: 16px;"><a href="/ja/works" style="color: rgba(255,255,255,0.8);">← 実績一覧へ戻る</a></p>
+    </div>
+  </section>
+</Layout>

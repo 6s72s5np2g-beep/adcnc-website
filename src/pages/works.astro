@@ -2,6 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 
 const works = [
+  { category: '電子零件', material: '黃銅', desc: '精密載盤・全孔位±0.02mm', photo: '/images/works/brass-charging-tray.jpg', photoAlt: '黃銅精密載盤 CNC 銑削加工 — 全孔位公差±0.02mm', href: '/works/brass-charging-tray' },
+  { category: '電子零件', material: '黃銅（1.6mm 薄板）', desc: '超薄載板・平面度0.02mm', photo: '/images/works/brass-thin-plate.jpg', photoAlt: '黃銅超薄板 CNC 銑削加工 — 1.6mm 平面度0.02mm', href: '/works/brass-thin-plate' },
+  { category: '工具機零件', material: '碳鋼 1018', desc: '油封座・內外徑切槽 Ra32', photo: '/images/works/machine-tool-seal-gland.jpg', photoAlt: '工具機油封座 CNC 車削加工 — 碳鋼內外徑密封溝槽 Ra32', href: '/works/machine-tool-seal-gland' },
+  { category: '手工具零件', material: '純鈦 Gr.2', desc: '齒輪箱殼・雙向螺紋', photo: '/images/works/titanium-gear-case.jpg', photoAlt: '純鈦齒輪箱殼 CNC 車銑加工 — 鈦Gr.2 雙向螺紋', href: '/works/titanium-gear-case' },
   { category: '機械零件', material: '灰鑄鐵 EN-GJL-200', desc: '多楔皮帶輪車削加工', photo: '/images/works/cast-iron-pulley.jpg', photoAlt: '鑄鐵多楔皮帶輪 CNC 車削加工 — 灰鑄鐵 EN-GJL-200', href: '/works/cast-iron-pulley' },
   { category: '機械零件', material: '鑄鐵', desc: '滾珠螺桿支撐座銑削搪孔', photo: '/images/works/ballscrew-support-housing.jpg', photoAlt: '滾珠螺桿支撐座 CNC 銑削搪孔加工 — 鑄鐵', href: '/works/ballscrew-support-housing' },
   { category: '生存遊戲零件', material: '6061-T6 鋁合金', desc: '戰術護木 (M-LOK)', photo: '/images/airsoft-handguard.png', photoAlt: '戰術護木零件 — 6061-T6 鋁合金 CNC 加工' },
@@ -36,7 +40,7 @@ const categories = ['全部', ...new Set(works.map(w => w.category))];
   <section class="section">
     <div class="container">
       <h2 class="section-title">加工件展示</h2>
-      <p class="section-sub">依產業類別精選代表作，實際合作案例請來電洽詢</p>
+      <p class="section-sub">依產業類別精選代表作，長期供應美商工具機大廠與國際氣動工具品牌，實際合作案例請來電洽詢</p>
 
       <div class="grid-4">
         {works.map(w => {

@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mjgqgaza';
 ---
 
 <Layout
@@ -26,7 +26,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
           <h2 style="font-size: clamp(24px, 2.5vw, 32px); color: var(--gray-900); margin-bottom: 8px; font-weight: 700;">Request a Quote</h2>
           <p style="color: var(--gray-600); margin-bottom: 32px;">Fill in the form below; we'll respond within 1 business day. You can also call +886-4-24965670 or contact us on LINE.</p>
 
-          <form action={FORMSPREE_ENDPOINT} method="POST" enctype="multipart/form-data">
+          <form action={FORMSPREE_ENDPOINT} method="POST">
             <div class="form-row">
               <div class="form-field">
                 <label>Contact Name <span class="form-required">*</span></label>
@@ -66,9 +66,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
             </div>
 
             <div class="form-field" style="margin-bottom: 24px;">
-              <label>Upload Drawings (PDF / JPG / DWG / STEP, multiple files OK)</label>
-              <input type="file" name="attachment" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.step,.stp,.iges" />
-              <p class="form-help">Max 10MB per file; for larger files please email andong@adcnc.com.tw</p>
+              <p class="form-help" style="padding: 14px 16px; background: #f7f9fc; border: 1px solid var(--gray-200); border-radius: 8px; line-height: 1.8;">📎 Have drawings / 3D files (PDF・DWG・STEP, etc.)? After submitting this form, please email them to <a href="mailto:andong@adcnc.com.tw" style="color: var(--primary); font-weight: 600;">andong@adcnc.com.tw</a> or send via LINE <a href="https://line.me/R/ti/p/@714dgtve" target="_blank" rel="noopener" style="color: #06c755; font-weight: 600;">@714dgtve</a>, and we'll match them to your inquiry for quoting.</p>
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Submit Inquiry</button>

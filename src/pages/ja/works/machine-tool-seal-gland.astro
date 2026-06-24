@@ -1,0 +1,88 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const specs = [
+  { label: '製品タイプ', value: 'オイルシールグランド（工作機械用）' },
+  { label: '材質', value: '炭素鋼 1018' },
+  { label: '加工精度', value: '内外径 ±0.002 inch（±0.05mm）、同軸度 0.001 inch' },
+  { label: '表面粗さ', value: 'シール面 Ra 32 µin（約 Ra 0.8 µm）' },
+  { label: '加工方法', value: 'CNC旋盤（内外径の多条シール溝）＋穴あけ' },
+  { label: '処理', value: '防錆油' },
+  { label: '用途', value: '米国工作機械大手・横形マシニングセンタ' },
+];
+---
+
+<Layout
+  title="工作機械用オイルシールグランド CNC旋盤加工事例｜炭素鋼 内外径溝 Ra32｜銨東株式会社"
+  description="炭素鋼オイルシールグランドのCNC旋盤加工事例：内外径の多条シール溝、シール面Ra32µin、直径公差±0.002inch、同軸度0.001inch。米国工作機械大手の横形マシニングセンタ向け。台湾・台中の精密CNC加工メーカー銨東。"
+  keywords="シールグランド加工,工作機械部品,内外径溝入れ,シール溝,炭素鋼旋削,1018加工,Ra32,同軸度,CNC旋盤,台中CNC"
+  active="works"
+  lang="ja"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/ja">ホーム</a> / <a href="/ja/works">実績</a> / 工作機械用シールグランド</div>
+      <h1>工作機械用オイルシールグランド CNC旋盤加工</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">炭素鋼・内外径シール溝・Ra32 µin の高光沢面</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/machine-tool-seal-gland.jpg"
+            alt="工作機械用オイルシールグランド CNC旋盤加工 — 炭素鋼 内外径シール溝、Ra32高光沢"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">内外径の多条シール溝を旋削、シール面Ra32µinでオイルシールの密着を確保</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">加工仕様</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">加工のポイント</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <h3>内外径シール溝</h3>
+          <p>内径・外径の多条シール溝をCNC旋削で成形。溝形状と位置精度がシールの密着性と密封性能を左右します。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3>Ra32 高光沢面</h3>
+          <p>シール面はRa32µin（約0.8µm）が要求され、精密旋削で面品質と寸法を両立し、動的シール寿命を確保します。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>同軸度 0.001 inch</h3>
+          <p>内径・外径・基準面の同軸度を0.001inchに管理し、回転シールの均一なすきまを維持します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>オイルシールグランド・シール部品・高光沢旋削をご検討ですか？</h2>
+      <p>図面をお送りいただければ、最速でお見積もりをご回答いたします</p>
+      <a href="/ja/contact" class="btn btn-primary btn-lg">お見積もり依頼</a>
+      <p style="margin-top: 16px;"><a href="/ja/works" style="color: rgba(255,255,255,0.8);">← 実績一覧へ戻る</a></p>
+    </div>
+  </section>
+</Layout>

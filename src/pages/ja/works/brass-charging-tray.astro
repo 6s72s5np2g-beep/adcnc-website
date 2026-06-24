@@ -1,0 +1,87 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const specs = [
+  { label: '製品タイプ', value: '黄銅精密部品トレー（多ポケット位置決め）' },
+  { label: '材質', value: '黄銅（真鍮）' },
+  { label: '加工精度', value: '全穴位置 ±0.02 mm' },
+  { label: '表面処理', value: '光沢めっき（防錆・外観品質）' },
+  { label: '加工方法', value: 'CNCフライス加工' },
+  { label: '用途', value: '電子産業（コネクタ・充電関連の精密キャリア）' },
+];
+---
+
+<Layout
+  title="黄銅精密キャリアトレー CNCフライス加工事例｜全穴位置 ±0.02mm｜銨東株式会社"
+  description="黄銅精密部品トレーのCNCフライス加工事例：数十箇所の穴位置を全て±0.02mm以内に管理、光沢めっき仕上げ。コネクタ・充電関連の電子精密キャリアに対応。台湾・台中の黄銅加工メーカー銨東。"
+  keywords="黄銅加工,真鍮加工,銅合金加工,精密トレー,治具加工,電子部品加工,穴位置公差,CNCフライス,台湾CNC,台中CNC"
+  active="works"
+  lang="ja"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/ja">ホーム</a> / <a href="/ja/works">実績</a> / 黄銅精密キャリアトレー</div>
+      <h1>黄銅精密キャリアトレー CNCフライス加工</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">黄銅・全穴位置 ±0.02mm・光沢めっき仕上げ</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/brass-charging-tray.jpg"
+            alt="黄銅精密部品トレー CNCフライス加工 — 多ポケット位置決め、全穴位置±0.02mm、光沢めっき"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">一体フライス加工の多ポケットトレー。数十箇所の穴位置を全て±0.02mm以内に管理</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">加工仕様</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">加工のポイント</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>全穴位置 ±0.02mm</h3>
+          <p>数十箇所のポケット・穴位置を一度の段取りでフライス加工し、全て±0.02mm以内に管理。キャリアの位置決め精度と部品互換性を確保します。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3>光沢めっき仕上げ</h3>
+          <p>黄銅素地に光沢めっきを施し、防錆性と外観品質を両立。長期使用の精密電子キャリアに最適です。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔩</div>
+          <h3>黄銅切削の管理</h3>
+          <p>延展性が高く穴縁にバリの出やすい黄銅を、適切な工具と切削条件で縁の仕上がりとバリ取り品質を管理します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>黄銅・銅合金・精密キャリアの加工をご検討ですか？</h2>
+      <p>図面をお送りいただければ、最速でお見積もりをご回答いたします</p>
+      <a href="/ja/contact" class="btn btn-primary btn-lg">お見積もり依頼</a>
+      <p style="margin-top: 16px;"><a href="/ja/works" style="color: rgba(255,255,255,0.8);">← 実績一覧へ戻る</a></p>
+    </div>
+  </section>
+</Layout>

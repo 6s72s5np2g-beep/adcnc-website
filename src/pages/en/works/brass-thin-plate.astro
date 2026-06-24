@@ -1,0 +1,87 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const specs = [
+  { label: 'Part Type', value: 'Brass precision perforated thin plate (carrier plate)' },
+  { label: 'Material', value: 'Brass' },
+  { label: 'Thickness', value: '1.6 mm overall' },
+  { label: 'Accuracy', value: 'Hole positions ±0.02 mm, flatness 0.02 mm' },
+  { label: 'Process', value: 'CNC milling (in-house vacuum-chuck fixture)' },
+  { label: 'Application', value: 'Electronics precision carrier plate' },
+];
+---
+
+<Layout
+  title="Brass Ultra-Thin Plate CNC Milling Case Study | 1.6mm Plate Flatness 0.02mm | AnDong Co., Ltd."
+  description="CNC milling case study: 1.6mm brass ultra-thin plate. An in-house vacuum-chuck fixture overcomes thin-part distortion to achieve 0.02mm flatness and ±0.02mm hole positions. For electronics precision carrier plates. Brass machining in Taichung, Taiwan."
+  keywords="brass thin plate machining,thin plate machining,vacuum chuck fixture,flatness machining,copper alloy machining,brass milling,precision carrier plate,hole position tolerance,Taichung CNC,thin part distortion"
+  active="works"
+  lang="en"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en">Home</a> / <a href="/en/works">Industries</a> / Brass Ultra-Thin Plate</div>
+      <h1>Brass Ultra-Thin Plate — CNC Milling</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">1.6mm brass plate · 0.02mm flatness · in-house vacuum-chuck machining</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/brass-thin-plate.jpg"
+            alt="Brass precision perforated thin plate CNC milling — 1.6mm overall, 0.02mm flatness, vacuum-chuck machining"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">A perforated plate just 1.6mm thick, held by an in-house vacuum chuck to secure whole-surface flatness</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">Specifications</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Machining Highlights</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🧲</div>
+          <h3>In-House Vacuum-Chuck Fixture</h3>
+          <p>A 1.6mm plate has very low rigidity; conventional clamping warps it under stress and the required flatness becomes unreachable. We designed an in-house vacuum chuck that holds the part by uniform negative pressure, eliminating clamping distortion — the key to achieving flatness.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📐</div>
+          <h3>Flatness 0.02mm</h3>
+          <p>Whole-surface flatness held to 0.02mm even in 1.6mm thin-plate form, meeting the seating and assembly requirements of electronic carrier plates.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>All Holes ±0.02mm</h3>
+          <p>Multiple hole positions are milled in one setup, all held within ±0.02mm to keep every hole accurately aligned on the plate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Need thin-plate, distortion-prone or high-flatness machining?</h2>
+      <p>Send us your drawing — we'll respond with a quote as fast as possible</p>
+      <a href="/en/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+      <p style="margin-top: 16px;"><a href="/en/works" style="color: rgba(255,255,255,0.8);">← Back to Industries</a></p>
+    </div>
+  </section>
+</Layout>

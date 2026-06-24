@@ -2,6 +2,10 @@
 import Layout from '../../layouts/Layout.astro';
 
 const works = [
+  { category: '電子部品', material: '黄銅', desc: '精密キャリアトレー・全穴±0.02mm', photo: '/images/works/brass-charging-tray.jpg', photoAlt: '黄銅精密キャリアトレー CNCフライス加工 — 全穴位置±0.02mm', href: '/ja/works/brass-charging-tray' },
+  { category: '電子部品', material: '黄銅（1.6mm 薄板）', desc: '超薄キャリアプレート・平面度0.02mm', photo: '/images/works/brass-thin-plate.jpg', photoAlt: '黄銅超薄板 CNCフライス加工 — 1.6mm 平面度0.02mm', href: '/ja/works/brass-thin-plate' },
+  { category: '工作機械部品', material: '炭素鋼 1018', desc: 'シールグランド・内外径溝 Ra32', photo: '/images/works/machine-tool-seal-gland.jpg', photoAlt: '工作機械用オイルシールグランド CNC旋盤加工 — 炭素鋼 内外径溝 Ra32', href: '/ja/works/machine-tool-seal-gland' },
+  { category: '工具部品', material: '純チタン Gr.2', desc: 'ギアケース・内外ねじ', photo: '/images/works/titanium-gear-case.jpg', photoAlt: '純チタンギアケース CNC旋削・フライス加工 — チタンGr.2 内外ねじ', href: '/ja/works/titanium-gear-case' },
   { category: '機械部品', material: 'ねずみ鋳鉄 EN-GJL-200', desc: 'ポリVプーリー旋盤加工', photo: '/images/works/cast-iron-pulley.jpg', photoAlt: '鋳鉄ポリVプーリー CNC旋盤加工 — ねずみ鋳鉄 EN-GJL-200', href: '/ja/works/cast-iron-pulley' },
   { category: '機械部品', material: '鋳鉄', desc: 'ボールねじサポートユニット加工', photo: '/images/works/ballscrew-support-housing.jpg', photoAlt: 'ボールねじサポートユニット CNCフライス・中ぐり加工 — 鋳鉄', href: '/ja/works/ballscrew-support-housing' },
   { category: 'サバゲー・タクティカル部品', material: '6061-T6 アルミ合金', desc: 'タクティカルハンドガード (M-LOK)', photo: '/images/airsoft-handguard.png', photoAlt: 'サバゲー用タクティカルハンドガード — 6061-T6 アルミ CNC加工' },
@@ -35,7 +39,7 @@ const works = [
   <section class="section">
     <div class="container">
       <h2 class="section-title">加工品例</h2>
-      <p class="section-sub">業界別の代表的加工品。具体的なお取引事例はお気軽にお問い合わせください</p>
+      <p class="section-sub">業界別の代表的加工品。米国の工作機械大手や国際的な空圧工具ブランドへ長年供給。具体的なお取引事例はお問い合わせください</p>
 
       <div class="grid-4">
         {works.map(w => {

@@ -2,6 +2,10 @@
 import Layout from '../../layouts/Layout.astro';
 
 const works = [
+  { category: 'Electronics', material: 'Brass', desc: 'Precision carrier tray · holes ±0.02mm', photo: '/images/works/brass-charging-tray.jpg', photoAlt: 'Brass precision carrier tray CNC milling — all holes ±0.02mm', href: '/en/works/brass-charging-tray' },
+  { category: 'Electronics', material: 'Brass (1.6mm plate)', desc: 'Ultra-thin carrier plate · flatness 0.02mm', photo: '/images/works/brass-thin-plate.jpg', photoAlt: 'Brass ultra-thin plate CNC milling — 1.6mm flatness 0.02mm', href: '/en/works/brass-thin-plate' },
+  { category: 'Machine Tools', material: 'Carbon Steel 1018', desc: 'Seal gland · ID/OD grooves Ra32', photo: '/images/works/machine-tool-seal-gland.jpg', photoAlt: 'Machine-tool rod seal gland CNC turning — carbon steel ID/OD grooves Ra32', href: '/en/works/machine-tool-seal-gland' },
+  { category: 'Hand Tools', material: 'Titanium Gr.2', desc: 'Gear case · dual threads', photo: '/images/works/titanium-gear-case.jpg', photoAlt: 'Titanium gear case CNC turn-mill — Ti Gr.2 dual threads', href: '/en/works/titanium-gear-case' },
   { category: 'Machinery', material: 'EN-GJL-200 Grey Cast Iron', desc: 'Poly-V pulley CNC turning', photo: '/images/works/cast-iron-pulley.jpg', photoAlt: 'Cast iron Poly-V pulley CNC turning — EN-GJL-200 grey iron', href: '/en/works/cast-iron-pulley' },
   { category: 'Machinery', material: 'Cast Iron', desc: 'Ball screw support housing milling & boring', photo: '/images/works/ballscrew-support-housing.jpg', photoAlt: 'Ball screw support housing CNC milling and boring — cast iron', href: '/en/works/ballscrew-support-housing' },
   { category: 'Airsoft / Tactical Gear', material: '6061-T6 Aluminum Alloy', desc: 'Tactical handguard (M-LOK)', photo: '/images/airsoft-handguard.png', photoAlt: 'Airsoft tactical handguard — 6061-T6 aluminum CNC machined' },
@@ -35,7 +39,7 @@ const works = [
   <section class="section">
     <div class="container">
       <h2 class="section-title">Sample Parts</h2>
-      <p class="section-sub">Selected representative parts by industry. Contact us for relevant case studies.</p>
+      <p class="section-sub">Selected representative parts by industry. A long-term supplier to a US machine-tool OEM and international pneumatic-tool brands. Contact us for relevant case studies.</p>
 
       <div class="grid-4">
         {works.map(w => {

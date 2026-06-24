@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mjgqgaza';
 ---
 
 <Layout
@@ -26,7 +26,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
           <h2 style="font-size: clamp(24px, 2.5vw, 32px); color: var(--gray-900); margin-bottom: 8px; font-weight: 700;">オンラインお見積もり</h2>
           <p style="color: var(--gray-600); margin-bottom: 32px;">下記フォームをご記入ください。1営業日以内にお見積もりをご回答いたします。お電話 +886-4-24965670 やLINEでもお気軽にどうぞ。</p>
 
-          <form action={FORMSPREE_ENDPOINT} method="POST" enctype="multipart/form-data">
+          <form action={FORMSPREE_ENDPOINT} method="POST">
             <div class="form-row">
               <div class="form-field">
                 <label>ご担当者名 <span class="form-required">*</span></label>
@@ -66,9 +66,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
             </div>
 
             <div class="form-field" style="margin-bottom: 24px;">
-              <label>図面アップロード（PDF / JPG / DWG / STEP、複数ファイル可）</label>
-              <input type="file" name="attachment" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.step,.stp,.iges" />
-              <p class="form-help">1ファイル10MBまで。大容量の場合は andong@adcnc.com.tw までメールでお送りください</p>
+              <p class="form-help" style="padding: 14px 16px; background: #f7f9fc; border: 1px solid var(--gray-200); border-radius: 8px; line-height: 1.8;">📎 図面・3Dファイル（PDF・DWG・STEP など）がございますか？本フォーム送信後、<a href="mailto:andong@adcnc.com.tw" style="color: var(--primary); font-weight: 600;">andong@adcnc.com.tw</a> までメール、または LINE <a href="https://line.me/R/ti/p/@714dgtve" target="_blank" rel="noopener" style="color: #06c755; font-weight: 600;">@714dgtve</a> にてお送りください。お問い合わせと照合してお見積もりいたします。</p>
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">お問い合わせを送信</button>

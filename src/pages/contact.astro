@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Formspree endpoint (傑哥申請後替換 YOUR_FORM_ID)
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+// Formspree endpoint (form「銨東官網詢價」→ joineve0913@gmail.com)
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mjgqgaza';
 ---
 
 <Layout
@@ -26,7 +26,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
           <h2 style="font-size: clamp(24px, 2.5vw, 32px); color: var(--gray-900); margin-bottom: 8px; font-weight: 700;">線上詢價</h2>
           <p style="color: var(--gray-600); margin-bottom: 32px;">填寫以下表單，我們會在 1 個工作天內回覆估價。也可直接撥打 04-24965670 或 LINE 聯絡。</p>
 
-          <form action={FORMSPREE_ENDPOINT} method="POST" enctype="multipart/form-data">
+          <form action={FORMSPREE_ENDPOINT} method="POST">
             <div class="form-row">
               <div class="form-field">
                 <label>聯絡人 <span class="form-required">*</span></label>
@@ -66,9 +66,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
             </div>
 
             <div class="form-field" style="margin-bottom: 24px;">
-              <label>上傳圖檔 (PDF / JPG / DWG / STEP，可多檔)</label>
-              <input type="file" name="attachment" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.step,.stp,.iges" />
-              <p class="form-help">單檔上限 10MB；如圖檔較大可寄至 andong@adcnc.com.tw</p>
+              <p class="form-help" style="padding: 14px 16px; background: #f7f9fc; border: 1px solid var(--gray-200); border-radius: 8px; line-height: 1.8;">📎 有圖面 / 3D 檔（PDF・DWG・STEP 等）嗎？填妥並送出本表單後，再將檔案 email 至 <a href="mailto:andong@adcnc.com.tw" style="color: var(--primary); font-weight: 600;">andong@adcnc.com.tw</a>，或透過 LINE <a href="https://line.me/R/ti/p/@714dgtve" target="_blank" rel="noopener" style="color: #06c755; font-weight: 600;">@714dgtve</a> 傳送，我們會對應您的詢價一併報價。</p>
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">送出詢價</button>

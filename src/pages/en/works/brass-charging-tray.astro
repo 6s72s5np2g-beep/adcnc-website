@@ -1,0 +1,87 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const specs = [
+  { label: 'Part Type', value: 'Brass precision part-carrier tray (multi-pocket locating)' },
+  { label: 'Material', value: 'Brass' },
+  { label: 'Accuracy', value: 'All hole positions within ±0.02 mm' },
+  { label: 'Surface Finish', value: 'Bright plating (anti-oxidation & appearance)' },
+  { label: 'Process', value: 'CNC milling' },
+  { label: 'Application', value: 'Electronics (connector / charging-related precision carriers)' },
+];
+---
+
+<Layout
+  title="Brass Precision Carrier Tray CNC Milling Case Study | ±0.02mm Hole Position | AnDong Co., Ltd."
+  description="CNC milling case study: brass precision part-carrier tray with dozens of hole positions held within ±0.02 mm, bright-plated finish, used as precision locating carriers for connector / charging electronics. Brass machining in Taichung, Taiwan."
+  keywords="brass machining,brass milling,copper alloy machining,precision carrier tray,fixture machining,electronics part machining,hole position tolerance,CNC milling Taiwan,Taichung CNC"
+  active="works"
+  lang="en"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en">Home</a> / <a href="/en/works">Industries</a> / Brass Precision Carrier Tray</div>
+      <h1>Brass Precision Carrier Tray — CNC Milling</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">Brass · all hole positions within ±0.02mm · bright-plated finish</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <img
+            src="/images/works/brass-charging-tray.jpg"
+            alt="Brass precision part-carrier tray CNC milling — multi-pocket locating, all holes within ±0.02mm, bright-plated"
+            loading="eager"
+            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);"
+          />
+          <p style="font-size: 13px; color: var(--gray-600); margin-top: 10px;">Single-piece milled multi-pocket carrier; dozens of hole positions all held within ±0.02mm</p>
+        </div>
+        <div>
+          <h2 class="section-title" style="text-align: left;">Specifications</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+            {specs.map(s => (
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 12px 10px 0; color: var(--gray-600); white-space: nowrap; vertical-align: top;">{s.label}</td>
+                <td style="padding: 10px 0; color: var(--gray-900); font-weight: 500;">{s.value}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Machining Highlights</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>All Holes ±0.02mm</h3>
+          <p>Dozens of pocket and hole positions are milled in one setup, all held within ±0.02mm — ensuring carrier locating accuracy and part interchangeability.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3>Bright-Plated Finish</h3>
+          <p>The brass body is bright-plated for anti-oxidation protection and surface appearance, suited to precision electronic carriers in long-term use.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔩</div>
+          <h3>Brass Cutting Control</h3>
+          <p>Brass is ductile and prone to burrs at hole edges; appropriate tooling and cutting parameters control edge cleanliness and deburring quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Have a brass, copper-alloy or precision carrier project?</h2>
+      <p>Send us your drawing — we'll respond with a quote as fast as possible</p>
+      <a href="/en/contact" class="btn btn-primary btn-lg">Request a Quote</a>
+      <p style="margin-top: 16px;"><a href="/en/works" style="color: rgba(255,255,255,0.8);">← Back to Industries</a></p>
+    </div>
+  </section>
+</Layout>
