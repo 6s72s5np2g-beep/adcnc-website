@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// 已上線的筆記（每週上一篇，草稿在 notes-drafts/，上線時搬進 notes/ 並在這裡加一筆）
+const notes = [
+  {
+    href: '/notes/titanium-lessons',
+    title: '鈦件發包前，先搞懂這三件事',
+    excerpt: '純鈦跟鈦合金差在哪、鈦件為什麼貴、怎麼挑有實績的廠——寫給要發包鈦零件的人的務實指南。',
+    date: '2026 年 7 月',
+    tag: '鈦加工',
+  },
+  {
+    href: '/notes/thin-stainless-distortion',
+    title: '薄件加工為什麼一堆工廠不敢接？',
+    excerpt: '薄件的成本在良率不在工時。發包薄板、薄環前該知道的事，以及怎麼一句話判斷工廠接不接得穩。',
+    date: '2026 年 7 月',
+    tag: '薄件加工',
+  },
+];
+---
+
+<Layout
+  title="技術筆記｜CNC 加工現場經驗分享｜銨東股份有限公司"
+  description="台中 CNC 加工廠銨東的現場技術筆記：薄件變形對策、鈦金屬加工心得、加工報價成本結構、公差與成本的關係。做了二十幾年精密加工，把有用的經驗寫下來。"
+  keywords="CNC加工技術,加工經驗,薄件加工,鈦加工,加工報價,台中CNC加工廠"
+  active="notes"
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1>技術筆記</h1>
+      <p style="margin-top: 12px; color: rgba(255,255,255,0.85);">做了二十幾年精密加工，把現場真正有用的經驗寫下來。不定期更新。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <div style="display: grid; gap: 20px;">
+        {notes.map(n => (
+          <a href={n.href} class="card" style="display: block; text-decoration: none; padding: 26px 28px;">
+            <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 6px;">{n.date}　·　{n.tag}</div>
+            <h2 style="font-size: 20px; margin: 0 0 8px; color: var(--gray-900);">{n.title}</h2>
+            <p style="margin: 0; color: var(--gray-600); line-height: 1.8;">{n.excerpt}</p>
+          </a>
+        ))}
+      </div>
+      <p style="margin-top: 28px; color: var(--gray-600); font-size: 14px;">筆記會持續增加。想聊圖面上的具體問題，直接<a href="/contact">傳圖過來</a>比較快。</p>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>有圖面想詢價？</h2>
+      <p>傳圖面、規格、數量，當天回覆估價</p>
+      <a href="/contact" class="btn btn-primary btn-lg">立即聯絡</a>
+    </div>
+  </section>
+</Layout>
