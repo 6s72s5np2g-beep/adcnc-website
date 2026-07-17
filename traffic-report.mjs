@@ -68,7 +68,7 @@ for (const r of rows) {
   );
 }
 
-console.log('\n— 7 天彙總 —');
+console.log(`\n— ${rows.length} 天彙總 —`);
 console.log(`總請求 ${totReq}｜頁面瀏覽 ${totPV}｜台灣請求 ${totTW}（${(totTW / totReq * 100).toFixed(1)}%）｜總頻寬 ${mb(totBytes)}`);
 
 // 國家排行（按請求數）
